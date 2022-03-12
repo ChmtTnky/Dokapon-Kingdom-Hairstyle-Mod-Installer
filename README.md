@@ -21,11 +21,15 @@ Repeat this for every hairstyle you wish to install
 **-Notes-**
 
 The "Delete PIM Files?" option is there for completeness sake. Do not uncheck it.
+
 Use the Dokapon Archive Tools (https://gamebanana.com/tools/8564) to unpack and repack the GAME.PAC
+
 Use Wiimms Tools to remake the iso/wbfs
 
 **-Future Plans-**
 
 Dokapon Archive Tools integration
+
 Simultaneous multi-installtion
+
 Job and Prank hair replacement
