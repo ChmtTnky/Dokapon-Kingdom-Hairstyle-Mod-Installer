@@ -2,7 +2,7 @@ Hairstyle Mod Installer Version 1.0
 
 A program to speed up the process of installing hairstyle mods for Dokapon Kingdom
 
-**-Instructions-**
+**Instructions**
 
 1. Select Model
 Select the hairstyle model that you wish to install.
@@ -18,18 +18,18 @@ The program will then replace the model files of the selected hairstyle with you
 
 Repeat this for every hairstyle you wish to install
 
-**-Notes-**
+**Notes**
 
--The "Delete PIM Files?" option is there for completeness sake. Do not uncheck it.
+- The "Delete PIM Files?" option is there for completeness sake. Do not uncheck it.
 
--Use the Dokapon Archive Tools (https://gamebanana.com/tools/8564) to unpack and repack the GAME.PAC
+- Use the Dokapon Archive Tools (https://gamebanana.com/tools/8564) to unpack and repack the GAME.PAC
 
--Use Wiimms Tools to remake the iso/wbfs
+- Use Wiimms Tools to remake the iso/wbfs
 
-**-Future Plans-**
+**Future Plans**
 
--Dokapon Archive Tools integration
+- Dokapon Archive Tools integration
 
--Simultaneous multi-installtion
+- Simultaneous multi-installtion
 
--Job and Prank hair replacement
+- Job and Prank hair replacement
