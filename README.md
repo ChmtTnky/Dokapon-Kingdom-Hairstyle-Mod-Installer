@@ -22,6 +22,8 @@ Repeat this for every hairstyle you wish to install
 
 - Use Wiimms ISO Tools (https://wit.wiimm.de/) to remake the iso/wbfs
 
+- This program uses .Net Core 6.0
+
 **Future Plans**
 
 - Dokapon Archive Tools integration
