@@ -4,17 +4,13 @@ A program to speed up the process of installing hairstyle mods for Dokapon Kingd
 
 **Instructions**
 
-1. Select Model
-Select the hairstyle model that you wish to install.
+1. Select Model: Select the hairstyle model that you wish to install.
 
-2. Select Folder
-Select the folder with the existing model files.
+2. Select Folder: Select the folder with the existing model files.
 
-4. Select Hairstyle
-From the dropdown list, select the hairstyle you wish to replace.
+4. Select Hairstyle: From the dropdown list, select the hairstyle you wish to replace.
 
-5. Click Apply
-The program will then replace the model files of the selected hairstyle with your chosen model.
+5. Click Apply: The program will then replace the model files of the selected hairstyle with your chosen model.
 
 Repeat this for every hairstyle you wish to install
 
