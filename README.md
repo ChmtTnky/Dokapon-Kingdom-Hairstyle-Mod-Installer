@@ -20,12 +20,12 @@ Repeat this for every hairstyle you wish to install
 
 - Use the Dokapon Archive Tools (https://gamebanana.com/tools/8564) to unpack and repack the GAME.PAC
 
-- Use Wiimms Tools to remake the iso/wbfs
+- Use Wiimms ISO Tools (https://wit.wiimm.de/) to remake the iso/wbfs
 
 **Future Plans**
 
 - Dokapon Archive Tools integration
 
-- Simultaneous multi-installtion
+- Simultaneous multi-installation
 
 - Job and Prank hair replacement
