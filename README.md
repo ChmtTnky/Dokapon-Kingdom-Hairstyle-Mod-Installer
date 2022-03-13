@@ -64,7 +64,7 @@ A program with all of the necessary tools and functions required to install hair
 
 ## Notes
 
-- In ARCodes.txt are various Action Replay codes for the game, including one that unlocks every hairstyle in the game, which I highly recommend using.
+- Usage of the hairstyle unlock AR code is highly recommended
 
 - The "Delete PIM Files?" option is there for the sake of completeness. Do not uncheck it.
 
