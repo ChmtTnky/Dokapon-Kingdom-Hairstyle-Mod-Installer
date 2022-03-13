@@ -14,7 +14,7 @@ A program to speed up the process of installing hairstyle mods for Dokapon Kingd
 
 **Instructions**
 
-1. Extract the Game Files
+Extract the Game Files
 
 - Click "Select ISO/WBFS" and select the iso or wbfs file of Dokapon Kingdom that you wish to modify
 
@@ -22,11 +22,11 @@ A program to speed up the process of installing hairstyle mods for Dokapon Kingd
 
 - The extracted files will be placed in a folder called DokaponFiles
 
-2. Unpack the GAME.PAC
+Unpack the GAME.PAC
 
 - Currently, the Archive Tools section is incomplete. To unpack the GAME.PAC use the Dokapon Archive Tools.
 
-3. Install the Mods
+Install the Mods
 
 - Click "Select Model File" and select the IGB file of the hairstyle you wish to install
 
@@ -36,13 +36,13 @@ A program to speed up the process of installing hairstyle mods for Dokapon Kingd
 
 - Click "Apply Mod" to install the hairstyle
 
-Repeat this step for every hairstyle you wish to install
+- Repeat this step for every hairstyle you wish to install
 
-4. Repack the GAME.PAC
+Repack the GAME.PAC
 
 - Currently, the Archive Tools section is incomplete. To repack the GAME.PAC use the Dokapon Archive Tools.
 
-5. Remake the WBFS
+Remake the WBFS
 
 - Click "Select Game Files Folder" and select the DokaponFiles folder
 
@@ -50,7 +50,7 @@ Repeat this step for every hairstyle you wish to install
 
 - The newly created WBFS will be called DokaponKingdom.wbfs
 
-6. Add the required AR Code
+Add the required AR Code
 
 - In Dolphin, right click Dokapon Kingdom, select Properties, then select Add New Code
 
@@ -58,7 +58,7 @@ Repeat this step for every hairstyle you wish to install
 
 - Make sure cheats are enabled in your Dolphin Configuration settings
 
-- You can now open the modded DokaponKingdom.wbfs with Dolphin
+You can now open the modded DokaponKingdom.wbfs with Dolphin
 
 **Notes**
 
