@@ -64,6 +64,8 @@ A program with all of the necessary tools and functions required to install hair
 
 ## Notes
 
+- In ARCodes.txt are various Action Replay codes for the game, including one that unlocks every hairstyle in the game, which I highly recommend using.
+
 - The "Delete PIM Files?" option is there for the sake of completeness. Do not uncheck it.
 
 - There is no option to create an ISO file because it is larger than a WBFS and it serves the same function.
