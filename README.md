@@ -2,7 +2,7 @@ Hairstyle Mod Installer Version 2.0
 
 A program to speed up the process of installing hairstyle mods for Dokapon Kingdom
 
-**Prerequisites**
+## Prerequisites
 
 - Dolphin Emulator (https://dolphin-emu.org/)
 
@@ -12,7 +12,7 @@ A program to speed up the process of installing hairstyle mods for Dokapon Kingd
 
 - Dokapon Archive Tools (https://gamebanana.com/tools/8564)
 
-**Instructions**
+## Instructions
 
 Extract the Game Files
 
@@ -60,13 +60,13 @@ Add the required AR Code
 
 You can now open the modded DokaponKingdom.wbfs with Dolphin
 
-**Notes**
+## Notes
 
 - The "Delete PIM Files?" option is there for the sake of completeness. Do not uncheck it.
 
 - There is no option to create an ISO file because it is larger than a WBFS and it serves the same function.
 
-**Future Plans**
+## Future Plans
 
 - Dokapon Archive Tools integration
 
