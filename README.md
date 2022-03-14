@@ -24,7 +24,7 @@ Big thanks to Yackerw for creating the Archive tools.
 
 - Click "Extract Game Files", at which point a Command Prompt will open and automatically run the command to extract the files
 
-- The extracted files will be placed in a folder called DokaponFiles
+- The extracted files will be placed in a folder called DokaponFiles in the same directory as the executable
 
 **Unpack the GAME.PAC**
 
@@ -52,7 +52,7 @@ Big thanks to Yackerw for creating the Archive tools.
 
 - Click "Create WBFS", at which point a Command Prompt will open and automatically run the command to remake the WBFS
 
-- The newly created WBFS will be called DokaponKingdom.wbfs
+- The newly created WBFS will be called DokaponKingdom.wbfs in the same directory as the executable
 
 **Add the required AR Code**
 
