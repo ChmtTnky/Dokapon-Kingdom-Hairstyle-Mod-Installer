@@ -2,6 +2,8 @@
 
 A program with all of the necessary tools and functions required to install hairstyle mods for Dokapon Kingdom.
 
+Big thanks to Yackerw for creating the Archive tools.
+
 ## Prerequisites
 
 - Dolphin Emulator (https://dolphin-emu.org/)
