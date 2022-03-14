@@ -208,12 +208,35 @@
             this.pimdeleteCheckBox.TabIndex = 1;
             this.pimdeleteCheckBox.Text = "Delete PIM files?";
             this.pimdeleteCheckBox.UseVisualStyleBackColor = true;
+            this.pimdeleteCheckBox.CheckedChanged += new System.EventHandler(this.pimdeleteCheckBox_CheckedChanged);
             // 
             // hairstyleListBox
             // 
             this.hairstyleListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hairstyleListBox.FormattingEnabled = true;
             this.hairstyleListBox.Items.AddRange(new object[] {
+            "Warrior (Male)",
+            "Warrior (Female)",
+            "Magician (Male)",
+            "Magician (Female)",
+            "Thief (Male)",
+            "Thief (Female)",
+            "Cleric (Male)",
+            "Cleric (Female)",
+            "Spellsword (Male)",
+            "Spellsword (Female)",
+            "Alchemist (Male)",
+            "Alchemist (Female)",
+            "Ninja (Male)",
+            "Ninja (Female)",
+            "Monk (Male)",
+            "Monk (Female)",
+            "Acrobat (Male)",
+            "Acrobat (Female)",
+            "Robo Knight (Male)",
+            "Robo Knight (Female)",
+            "Hero (Male)",
+            "Hero (Female)",
             "Afro (Male)",
             "Afro (Female)",
             "Punk (Male)",
@@ -328,6 +351,7 @@
             this.repackgamepacButton.TabIndex = 8;
             this.repackgamepacButton.Text = "Repack GAME.PAC";
             this.repackgamepacButton.UseVisualStyleBackColor = true;
+            this.repackgamepacButton.Click += new System.EventHandler(this.repackgamepacButton_Click);
             // 
             // selectisowbfsLabel
             // 
@@ -499,10 +523,12 @@
             // 
             // opengamepacDialog
             // 
+            this.opengamepacDialog.Filter = "PAC File|*.PAC|All Files|*.*";
             this.opengamepacDialog.Title = "Select GAME.PAC";
             // 
             // opengamepahDialog
             // 
+            this.opengamepahDialog.Filter = "PAH File|*.PAH|All Files|*.*";
             this.opengamepahDialog.Title = "Select GAME.PAH";
             // 
             // Form1
