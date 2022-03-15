@@ -1,4 +1,4 @@
-## Hairstyle Mod Installer Version 2.0
+## Hairstyle Mod Installer Version 3.0
 
 A program with all of the necessary tools and functions required to install hairstyle mods for Dokapon Kingdom.
 
