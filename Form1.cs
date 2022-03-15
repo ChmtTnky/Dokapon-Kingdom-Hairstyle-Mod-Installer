@@ -302,7 +302,7 @@ namespace DokaModInterface
             }
             catch
             {
-                Console.WriteLine("Failed to open GAME.PAC!");
+                repackgamepacLabel.Text = "Failed to open GAME.PAC!";
                 return;
             }
             try
@@ -311,7 +311,7 @@ namespace DokaModInterface
             }
             catch
             {
-                Console.WriteLine("Failed to open GAME.PAH!");
+                repackgamepacLabel.Text = "Failed to open GAME.PAH!";
                 return;
             }
             // open all the files and read them
@@ -466,6 +466,11 @@ namespace DokaModInterface
         {
             unpackgamepacLabel.Text = "Unpacking GAME.PAC to PACFiles...";
 
+            if (!Directory.Exists("PACFiles"))
+            {
+                unpackgamepacLabel.Text = "Could not find PACFiles folder";
+            }
+
             string sdir = "PACFiles";
             string spac = opengamepacDialog.FileName;
             string spah = opengamepahDialog.FileName;
@@ -478,7 +483,7 @@ namespace DokaModInterface
             }
             catch
             {
-                Console.WriteLine("Failed to open either pac or pah file");
+                unpackgamepacLabel.Text = "Failed to open either pac or pah file";
                 return;
             }
             Directory.CreateDirectory(sdir);
