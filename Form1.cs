@@ -269,7 +269,7 @@ namespace DokaModInterface
             return BitConverter.ToInt32(tmp, 0);
         }
 
-        // Archive Pcker made by Yacker
+        // Archive Packer made by Yacker
         // Modified slightly by ChmtTnky
         // Finds PACFiles folder and makes GAME.PAC and GAME.PAH from its contents
         private void repackgamepacButton_Click(object sender, EventArgs e)
@@ -436,6 +436,76 @@ namespace DokaModInterface
             }
 
             repackgamepacLabel.Text = "Successfully created GAME.PAC and GAME.PAH from PACFiles";
+        }
+
+        static int ReadInt(FileStream fs)
+        {
+            byte[] buff = new byte[4];
+            fs.Read(buff, 0, 4);
+            return BitConverter.ToInt32(buff);
+        }
+
+        // Unpacker Functions
+        static string ReadString(FileStream fs)
+        {
+            string retVal = "";
+            byte[] buff = new byte[1];
+            fs.Read(buff);
+            while (buff[0] != 0)
+            {
+                retVal += System.Text.Encoding.ASCII.GetString(buff);
+                fs.Read(buff);
+            }
+            return retVal;
+        }
+
+        // Unpacker made by Yacker
+        // Modified by ChmtTnky
+        // Takes selected GAME.PAC and GAME.PAH and extracts the GAME.PAC to a foler called PACFiles
+        private void unpackgamepacButton_Click(object sender, EventArgs e)
+        {
+            unpackgamepacLabel.Text = "Unpacking GAME.PAC to PACFiles...";
+
+            string sdir = "PACFiles";
+            string spac = opengamepacDialog.FileName;
+            string spah = opengamepahDialog.FileName;
+
+            FileStream pac, pah;
+            try
+            {
+                pac = File.Open(spac, FileMode.Open);
+                pah = File.Open(spah, FileMode.Open);
+            }
+            catch
+            {
+                Console.WriteLine("Failed to open either pac or pah file");
+                return;
+            }
+            Directory.CreateDirectory(sdir);
+            int fCount = ReadInt(pah);
+            int fOffs = ReadInt(pah);
+            for (int i = 0; i < fCount; ++i)
+            {
+                pah.Seek(fOffs + (0x10 * i), SeekOrigin.Begin);
+                int currFileOffs = ReadInt(pah);
+                int currFileSize = ReadInt(pah);
+                // blank
+                ReadInt(pah);
+                int fileNameOffs = ReadInt(pah);
+                pah.Seek(fileNameOffs, SeekOrigin.Begin);
+                string newFileName = ReadString(pah);
+                // just read the actual data and we're done
+                pac.Seek(currFileOffs, SeekOrigin.Begin);
+                byte[] fileData = new byte[currFileSize];
+                pac.Read(fileData);
+                FileStream newFile = File.Open(sdir + "\\" + newFileName, FileMode.Create);
+                newFile.Write(fileData);
+                newFile.Close();
+            }
+            pac.Close();
+            pah.Close();
+
+            unpackgamepacLabel.Text = "Successfully extracted GAME.PAC and GAME.PAH to PACFiles";
         }
     }
 }

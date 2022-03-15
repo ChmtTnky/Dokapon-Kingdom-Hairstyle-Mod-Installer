@@ -8,13 +8,11 @@ Big thanks to Yackerw for creating the Archive tools.
 
 - Dolphin Emulator (https://dolphin-emu.org/)
 
-- Wiimms Tools (https://wit.wiimm.de/)
+- WIT: Wiimms Tools (https://wit.wiimm.de/)
 
 - Microsoft .NET SDK 6.0 (https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-- Dokapon Archive Tools (https://gamebanana.com/tools/8564)
-
-- Optional: Some hairstyle mods (https://gamebanana.com/games/15747)
+- Optional: Some hairstyle mods! (https://gamebanana.com/games/15747)
 
 ## Instructions
 
@@ -24,19 +22,27 @@ Big thanks to Yackerw for creating the Archive tools.
 
 - Click "Extract Game Files", at which point a Command Prompt will open and automatically run the command to extract the files
 
-- The extracted files will be placed in a folder called DokaponFiles in the same directory as the executable
+- The extracted files will be placed in a new folder called DokaponFiles in the same directory as the executable
 
 **Unpack the GAME.PAC**
 
-- Currently, the Archive Tools section is incomplete. To unpack the GAME.PAC use the Dokapon Archive Tools.
+- Click "Select GAME.PAC" and select the GAME.PAC located inside the newly created DokaponFiles folder
+
+- Click "Select GAME.PAH" and select the GAME.PAH located inside the newly created DokaponFiles folder
+
+- Click "Unpack GAME.PAC", at which point the program will extract the files contained within the GAME.PAC
+
+- The extracted files will be placed in a new folder called PACFiles in the same directory as the executable
 
 **Install the Mods**
 
 - Click "Select Model File" and select the IGB file of the hairstyle you wish to install
 
-- Click "Select Model Files Folder" and select the folder containing the model files extracted from the GAME.PAC
+- Click "Select Model Files Folder" and select the newly created PACFiles folder
 
 - Select the hairstyle from the dropdown list that you wish to replace
+
+- DO NOT UNCHECK "Delete PIM Files?". Just ignore the option unless you have a reason not to.
 
 - Click "Apply Mod" to install the hairstyle
 
@@ -44,7 +50,9 @@ Big thanks to Yackerw for creating the Archive tools.
 
 **Repack the GAME.PAC**
 
-- Currently, the Archive Tools section is incomplete. To repack the GAME.PAC use the Dokapon Archive Tools.
+- Select "Repack GAME.PAC", at which point the program will begin repacking the GAME.PAC and GAME.PAH using the contents of PACFiles
+
+- The newly created GAME.PAC and GAME.PAH will automatically replace the previously selected GAME.PAC and GAME.PAH
 
 **Remake the WBFS**
 
@@ -52,7 +60,7 @@ Big thanks to Yackerw for creating the Archive tools.
 
 - Click "Create WBFS", at which point a Command Prompt will open and automatically run the command to remake the WBFS
 
-- The newly created WBFS will be called DokaponKingdom.wbfs in the same directory as the executable
+- The newly created WBFS called DokaponKingdom.wbfs will be placed in the same directory as the executable
 
 **Add the required AR Code**
 
@@ -70,10 +78,6 @@ Big thanks to Yackerw for creating the Archive tools.
 
 - The "Delete PIM Files?" option is there for the sake of completeness. Do not uncheck it.
 
+- The program might take more time to finish if you have a slower computer. Just be patient.
+
 - There is no option to create an ISO file because it is larger than a WBFS and it serves the same function.
-
-## Future Plans
-
-- Dokapon Archive Tools integration
-
-- Job and Prank hair replacement

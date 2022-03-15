@@ -45,7 +45,7 @@
             this.modelfolderButton = new System.Windows.Forms.Button();
             this.selectgamepacButton = new System.Windows.Forms.Button();
             this.selectgamepahButton = new System.Windows.Forms.Button();
-            this.unpaclgamepacButton = new System.Windows.Forms.Button();
+            this.unpackgamepacButton = new System.Windows.Forms.Button();
             this.repackgamepacButton = new System.Windows.Forms.Button();
             this.selectisowbfsLabel = new System.Windows.Forms.Label();
             this.gamepacLabel = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             this.tableLayoutPanel1.Controls.Add(this.modelfolderButton, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.selectgamepacButton, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.selectgamepahButton, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.unpaclgamepacButton, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.unpackgamepacButton, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.repackgamepacButton, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.selectisowbfsLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.gamepacLabel, 2, 2);
@@ -332,15 +332,16 @@
             this.selectgamepahButton.UseVisualStyleBackColor = true;
             this.selectgamepahButton.Click += new System.EventHandler(this.selectgamepahButton_Click);
             // 
-            // unpaclgamepacButton
+            // unpackgamepacButton
             // 
-            this.unpaclgamepacButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.unpaclgamepacButton.Location = new System.Drawing.Point(363, 289);
-            this.unpaclgamepacButton.Name = "unpaclgamepacButton";
-            this.unpaclgamepacButton.Size = new System.Drawing.Size(327, 44);
-            this.unpaclgamepacButton.TabIndex = 7;
-            this.unpaclgamepacButton.Text = "Unpack GAME.PAC";
-            this.unpaclgamepacButton.UseVisualStyleBackColor = true;
+            this.unpackgamepacButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.unpackgamepacButton.Location = new System.Drawing.Point(363, 289);
+            this.unpackgamepacButton.Name = "unpackgamepacButton";
+            this.unpackgamepacButton.Size = new System.Drawing.Size(327, 44);
+            this.unpackgamepacButton.TabIndex = 7;
+            this.unpackgamepacButton.Text = "Unpack GAME.PAC";
+            this.unpackgamepacButton.UseVisualStyleBackColor = true;
+            this.unpackgamepacButton.Click += new System.EventHandler(this.unpackgamepacButton_Click);
             // 
             // repackgamepacButton
             // 
@@ -570,7 +571,7 @@
         private Button button2;
         private Button selectgamepacButton;
         private Button selectgamepahButton;
-        private Button unpaclgamepacButton;
+        private Button unpackgamepacButton;
         private Button repackgamepacButton;
         private Label selectisowbfsLabel;
         private Label gamepacLabel;
