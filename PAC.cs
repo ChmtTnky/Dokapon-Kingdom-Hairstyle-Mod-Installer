@@ -61,19 +61,18 @@ namespace PACManager
 				alphabet_list[i] = new List<string>();
 			}
 
-			byte upper_z = shift_jis.GetBytes("Z")[0];
 			byte upper_a = shift_jis.GetBytes("A")[0];
 			byte lower_a = shift_jis.GetBytes("a")[0];
 			// iterate through each file's name
 			for (int i = 0; i < file_names.Length; i++)
 			{
 				// get the first letter of the name
-				byte c = (byte)file_names[i][0];
-				// if the letter's value is higher than 'Z'
-				if (c > upper_z)
+				byte c = shift_jis.GetBytes(file_names[i])[0];
+				// if the letter's value is higher than 'a'
+				if (c > lower_a)
 				{
-					// remove the 6 non-alphabet chars
-					c -= (byte)(lower_a - upper_z);
+					// shrink to even out with uppercase
+					c -= (byte)(lower_a - upper_a);
 				}
 				// subtract the value of 'A' to get the index in the array
 				c -= upper_a;
@@ -139,7 +138,12 @@ namespace PACManager
 				}
 			}
 
-			// this is only necessary for matching
+			// realign pah itself
+			int pah_align = 0x10 - ((int)pah.BaseStream.Position % 0x10);
+			if (pah_align != 0x10)
+			{
+				pah.Write(buffer, 0, pah_align);
+			}
 			pah.Write(buffer, 0, 0x30);
 			pah.Flush();
 			pah.Close();
