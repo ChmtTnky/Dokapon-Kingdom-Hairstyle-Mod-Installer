@@ -2,34 +2,34 @@
 
 namespace DokaModInterface
 {
-    partial class Form1
-    {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class Form1
+	{
+		/// <summary>
+		///  Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		///  Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		///  Required method for Designer support - do not modify
+		///  the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.open_model_dialog = new System.Windows.Forms.OpenFileDialog();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -225,50 +225,50 @@ namespace DokaModInterface
 			this.hairstyle_list_box.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.hairstyle_list_box.FormattingEnabled = true;
 			this.hairstyle_list_box.Items.AddRange(new object[] {
-            "Warrior (Male)",
-            "Warrior (Female)",
-            "Magician (Male)",
-            "Magician (Female)",
-            "Thief (Male)",
-            "Thief (Female)",
-            "Cleric (Male)",
-            "Cleric (Female)",
-            "Spellsword (Male)",
-            "Spellsword (Female)",
-            "Alchemist (Male)",
-            "Alchemist (Female)",
-            "Ninja (Male)",
-            "Ninja (Female)",
-            "Monk (Male)",
-            "Monk (Female)",
-            "Acrobat (Male)",
-            "Acrobat (Female)",
-            "Robo Knight (Male)",
-            "Robo Knight (Female)",
-            "Hero (Male)",
-            "Hero (Female)",
-            "Afro (Male)",
-            "Afro (Female)",
-            "Punk (Male)",
-            "Punk (Female)",
-            "Horror (Male)",
-            "Horror (Female)",
-            "Raiden (Male)",
-            "Raiden (Female)",
-            "Samurai",
-            "Geisha",
-            "Pompadour",
-            "Pigtails",
-            "Prince",
-            "Princess",
-            "Cowboy",
-            "Kitty",
-            "Elephant (Male)",
-            "Elephant (Female)",
-            "Ducky (Male)",
-            "Ducky (Female)",
-            "Wabbit (Male)",
-            "Wabbit (Female)"});
+			"Warrior (Male)",
+			"Warrior (Female)",
+			"Magician (Male)",
+			"Magician (Female)",
+			"Thief (Male)",
+			"Thief (Female)",
+			"Cleric (Male)",
+			"Cleric (Female)",
+			"Spellsword (Male)",
+			"Spellsword (Female)",
+			"Alchemist (Male)",
+			"Alchemist (Female)",
+			"Ninja (Male)",
+			"Ninja (Female)",
+			"Monk (Male)",
+			"Monk (Female)",
+			"Acrobat (Male)",
+			"Acrobat (Female)",
+			"Robo Knight (Male)",
+			"Robo Knight (Female)",
+			"Hero (Male)",
+			"Hero (Female)",
+			"Afro (Male)",
+			"Afro (Female)",
+			"Punk (Male)",
+			"Punk (Female)",
+			"Horror (Male)",
+			"Horror (Female)",
+			"Raiden (Male)",
+			"Raiden (Female)",
+			"Samurai",
+			"Geisha",
+			"Pompadour",
+			"Pigtails",
+			"Prince",
+			"Princess",
+			"Cowboy",
+			"Kitty",
+			"Elephant (Male)",
+			"Elephant (Female)",
+			"Ducky (Male)",
+			"Ducky (Female)",
+			"Wabbit (Male)",
+			"Wabbit (Female)"});
 			this.hairstyle_list_box.Location = new System.Drawing.Point(526, 238);
 			this.hairstyle_list_box.Margin = new System.Windows.Forms.Padding(2);
 			this.hairstyle_list_box.Name = "hairstyleListBox";
@@ -577,47 +577,47 @@ namespace DokaModInterface
 			this.tableLayoutPanel1.PerformLayout();
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private OpenFileDialog open_model_dialog;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button selectButton;
-        private Label model_file_label;
-        private Button applyButton;
-        private Label apply_status_label;
-        private ComboBox hairstyle_list_box;
-        private Button modelfolderButton;
-        private Label folder_label;
-        private FolderBrowserDialog model_files_folder_dialog;
-        private CheckBox pim_delete_checkbox;
-        private Button selectgamefilesfolderButton;
-        private Button createwbfsButton;
-        private Button selectisowbfsButton;
-        private Button extractgamefilesButton;
-        private TableLayoutPanel tableLayoutPanel2;
-        private Button extractfilesButton;
-        private TableLayoutPanel tableLayoutPanel4;
-        private Button button2;
-        private Button selectgamepacButton;
-        private Button selectgamepahButton;
-        private Button unpackgamepacButton;
-        private Button repackgamepacButton;
-        private Label select_iso_wbfs_label;
-        private Label pac_label;
-        private Label pah_label;
-        private Label extract_game_files_label;
-        private Label unpack_pac_label;
-        private Label select_game_files_folder_label;
-        private Label repack_pac_label;
-        private Label create_wbfs_label;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private OpenFileDialog open_iso_wbfs_dialog;
-        private OpenFileDialog open_pac_dialog;
-        private OpenFileDialog open_pah_dialog;
-        private FolderBrowserDialog game_files_folder_dialog;
-    }
+		private OpenFileDialog open_model_dialog;
+		private TableLayoutPanel tableLayoutPanel1;
+		private Button selectButton;
+		private Label model_file_label;
+		private Button applyButton;
+		private Label apply_status_label;
+		private ComboBox hairstyle_list_box;
+		private Button modelfolderButton;
+		private Label folder_label;
+		private FolderBrowserDialog model_files_folder_dialog;
+		private CheckBox pim_delete_checkbox;
+		private Button selectgamefilesfolderButton;
+		private Button createwbfsButton;
+		private Button selectisowbfsButton;
+		private Button extractgamefilesButton;
+		private TableLayoutPanel tableLayoutPanel2;
+		private Button extractfilesButton;
+		private TableLayoutPanel tableLayoutPanel4;
+		private Button button2;
+		private Button selectgamepacButton;
+		private Button selectgamepahButton;
+		private Button unpackgamepacButton;
+		private Button repackgamepacButton;
+		private Label select_iso_wbfs_label;
+		private Label pac_label;
+		private Label pah_label;
+		private Label extract_game_files_label;
+		private Label unpack_pac_label;
+		private Label select_game_files_folder_label;
+		private Label repack_pac_label;
+		private Label create_wbfs_label;
+		private Label label9;
+		private Label label10;
+		private Label label11;
+		private OpenFileDialog open_iso_wbfs_dialog;
+		private OpenFileDialog open_pac_dialog;
+		private OpenFileDialog open_pah_dialog;
+		private FolderBrowserDialog game_files_folder_dialog;
+	}
 }
