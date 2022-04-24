@@ -31,474 +31,30 @@ namespace DokaModInterface
 		private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.open_model_dialog = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.applyButton = new System.Windows.Forms.Button();
-            this.apply_status_label = new System.Windows.Forms.Label();
-            this.selectisowbfsButton = new System.Windows.Forms.Button();
-            this.createwbfsButton = new System.Windows.Forms.Button();
-            this.selectgamefilesfolderButton = new System.Windows.Forms.Button();
-            this.extractgamefilesButton = new System.Windows.Forms.Button();
-            this.pim_delete_checkbox = new System.Windows.Forms.CheckBox();
-            this.hairstyle_list_box = new System.Windows.Forms.ComboBox();
-            this.model_file_label = new System.Windows.Forms.Label();
-            this.folder_label = new System.Windows.Forms.Label();
-            this.selectButton = new System.Windows.Forms.Button();
-            this.modelfolderButton = new System.Windows.Forms.Button();
-            this.selectgamepacButton = new System.Windows.Forms.Button();
-            this.selectgamepahButton = new System.Windows.Forms.Button();
-            this.unpackgamepacButton = new System.Windows.Forms.Button();
-            this.repackgamepacButton = new System.Windows.Forms.Button();
-            this.select_iso_wbfs_label = new System.Windows.Forms.Label();
-            this.pac_label = new System.Windows.Forms.Label();
-            this.pah_label = new System.Windows.Forms.Label();
-            this.extract_game_files_label = new System.Windows.Forms.Label();
-            this.unpack_pac_label = new System.Windows.Forms.Label();
-            this.select_game_files_folder_label = new System.Windows.Forms.Label();
-            this.repack_pac_label = new System.Windows.Forms.Label();
-            this.create_wbfs_label = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.model_files_folder_dialog = new System.Windows.Forms.FolderBrowserDialog();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.extractfilesButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.open_iso_wbfs_dialog = new System.Windows.Forms.OpenFileDialog();
-            this.open_pac_dialog = new System.Windows.Forms.OpenFileDialog();
-            this.open_pah_dialog = new System.Windows.Forms.OpenFileDialog();
-            this.game_files_folder_dialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.hairstyle_list_box = new System.Windows.Forms.ComboBox();
+            this.finish_button = new System.Windows.Forms.Button();
+            this.mod_folder_label = new System.Windows.Forms.Label();
+            this.select_mod_folder_button = new System.Windows.Forms.Button();
+            this.select_iso_wbfs_label = new System.Windows.Forms.Label();
+            this.select_iso_wbfs_button = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pim_red_label = new System.Windows.Forms.Label();
+            this.pim_blue_label = new System.Windows.Forms.Label();
+            this.pim_black_label = new System.Windows.Forms.Label();
+            this.pim_white_label = new System.Windows.Forms.Label();
+            this.pim_green_label = new System.Windows.Forms.Label();
+            this.pim_pink_label = new System.Windows.Forms.Label();
+            this.pim_yellow_label = new System.Windows.Forms.Label();
+            this.igb_file_label = new System.Windows.Forms.Label();
+            this.apply_mod_button = new System.Windows.Forms.Button();
+            this.open_mod_folder_dialog = new System.Windows.Forms.FolderBrowserDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // open_model_dialog
-            // 
-            this.open_model_dialog.Filter = "IGB files|*.igb|All Files|*.*";
-            this.open_model_dialog.Title = "Select Model";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.62055F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.56917F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.62055F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.56917F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.62055F));
-            this.tableLayoutPanel1.Controls.Add(this.applyButton, 4, 7);
-            this.tableLayoutPanel1.Controls.Add(this.apply_status_label, 4, 8);
-            this.tableLayoutPanel1.Controls.Add(this.selectisowbfsButton, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.createwbfsButton, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.selectgamefilesfolderButton, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.extractgamefilesButton, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pim_delete_checkbox, 4, 6);
-            this.tableLayoutPanel1.Controls.Add(this.hairstyle_list_box, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.model_file_label, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.folder_label, 4, 4);
-            this.tableLayoutPanel1.Controls.Add(this.selectButton, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.modelfolderButton, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.selectgamepacButton, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.selectgamepahButton, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.unpackgamepacButton, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.repackgamepacButton, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.select_iso_wbfs_label, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pac_label, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pah_label, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.extract_game_files_label, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.unpack_pac_label, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.select_game_files_folder_label, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.repack_pac_label, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.create_wbfs_label, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 4, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1925, 1056);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // applyButton
-            // 
-            this.applyButton.AutoSize = true;
-            this.applyButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.applyButton.Location = new System.Drawing.Point(1319, 814);
-            this.applyButton.Margin = new System.Windows.Forms.Padding(5);
-            this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(601, 86);
-            this.applyButton.TabIndex = 0;
-            this.applyButton.Text = "Apply Mod";
-            this.applyButton.UseVisualStyleBackColor = true;
-            this.applyButton.Click += new System.EventHandler(this.Apply_Button_Click);
-            // 
-            // apply_status_label
-            // 
-            this.apply_status_label.AutoSize = true;
-            this.apply_status_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.apply_status_label.Location = new System.Drawing.Point(1319, 905);
-            this.apply_status_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.apply_status_label.Name = "apply_status_label";
-            this.apply_status_label.Size = new System.Drawing.Size(601, 151);
-            this.apply_status_label.TabIndex = 1;
-            this.apply_status_label.Text = "status";
-            // 
-            // selectisowbfsButton
-            // 
-            this.selectisowbfsButton.AutoSize = true;
-            this.selectisowbfsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectisowbfsButton.Location = new System.Drawing.Point(5, 82);
-            this.selectisowbfsButton.Margin = new System.Windows.Forms.Padding(5);
-            this.selectisowbfsButton.Name = "selectisowbfsButton";
-            this.selectisowbfsButton.Size = new System.Drawing.Size(598, 86);
-            this.selectisowbfsButton.TabIndex = 4;
-            this.selectisowbfsButton.Text = "Select ISO/WBFS";
-            this.selectisowbfsButton.UseVisualStyleBackColor = true;
-            this.selectisowbfsButton.Click += new System.EventHandler(this.Select_ISO_WBFS_Button_Click);
-            // 
-            // createwbfsButton
-            // 
-            this.createwbfsButton.AutoSize = true;
-            this.createwbfsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.createwbfsButton.Location = new System.Drawing.Point(5, 814);
-            this.createwbfsButton.Margin = new System.Windows.Forms.Padding(5);
-            this.createwbfsButton.Name = "createwbfsButton";
-            this.createwbfsButton.Size = new System.Drawing.Size(598, 86);
-            this.createwbfsButton.TabIndex = 0;
-            this.createwbfsButton.Text = "Create WBFS";
-            this.createwbfsButton.UseVisualStyleBackColor = true;
-            this.createwbfsButton.Click += new System.EventHandler(this.Create_WBFS_Button_Click);
-            // 
-            // selectgamefilesfolderButton
-            // 
-            this.selectgamefilesfolderButton.AutoSize = true;
-            this.selectgamefilesfolderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectgamefilesfolderButton.Location = new System.Drawing.Point(5, 570);
-            this.selectgamefilesfolderButton.Margin = new System.Windows.Forms.Padding(5);
-            this.selectgamefilesfolderButton.Name = "selectgamefilesfolderButton";
-            this.selectgamefilesfolderButton.Size = new System.Drawing.Size(598, 86);
-            this.selectgamefilesfolderButton.TabIndex = 0;
-            this.selectgamefilesfolderButton.Text = "Select Game Files Folder";
-            this.selectgamefilesfolderButton.UseVisualStyleBackColor = true;
-            this.selectgamefilesfolderButton.Click += new System.EventHandler(this.SelectGameFilesFolderButton_Click);
-            // 
-            // extractgamefilesButton
-            // 
-            this.extractgamefilesButton.AutoSize = true;
-            this.extractgamefilesButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.extractgamefilesButton.Location = new System.Drawing.Point(5, 326);
-            this.extractgamefilesButton.Margin = new System.Windows.Forms.Padding(5);
-            this.extractgamefilesButton.Name = "extractgamefilesButton";
-            this.extractgamefilesButton.Size = new System.Drawing.Size(598, 86);
-            this.extractgamefilesButton.TabIndex = 3;
-            this.extractgamefilesButton.Text = "Extract Game Files";
-            this.extractgamefilesButton.UseVisualStyleBackColor = true;
-            this.extractgamefilesButton.Click += new System.EventHandler(this.ExtractGameFilesButton_Click);
-            // 
-            // pim_delete_checkbox
-            // 
-            this.pim_delete_checkbox.AutoSize = true;
-            this.pim_delete_checkbox.Checked = true;
-            this.pim_delete_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.pim_delete_checkbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pim_delete_checkbox.Location = new System.Drawing.Point(1319, 666);
-            this.pim_delete_checkbox.Margin = new System.Windows.Forms.Padding(5);
-            this.pim_delete_checkbox.Name = "pim_delete_checkbox";
-            this.pim_delete_checkbox.Size = new System.Drawing.Size(601, 138);
-            this.pim_delete_checkbox.TabIndex = 1;
-            this.pim_delete_checkbox.Text = "Delete PIM files?";
-            this.pim_delete_checkbox.UseVisualStyleBackColor = true;
-            this.pim_delete_checkbox.CheckedChanged += new System.EventHandler(this.Delete_PIM_Checkbox_Click);
-            // 
-            // hairstyle_list_box
-            // 
-            this.hairstyle_list_box.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hairstyle_list_box.FormattingEnabled = true;
-            this.hairstyle_list_box.Items.AddRange(new object[] {
-            "Warrior (Male)",
-            "Warrior (Female)",
-            "Magician (Male)",
-            "Magician (Female)",
-            "Thief (Male)",
-            "Thief (Female)",
-            "Cleric (Male)",
-            "Cleric (Female)",
-            "Spellsword (Male)",
-            "Spellsword (Female)",
-            "Alchemist (Male)",
-            "Alchemist (Female)",
-            "Ninja (Male)",
-            "Ninja (Female)",
-            "Monk (Male)",
-            "Monk (Female)",
-            "Acrobat (Male)",
-            "Acrobat (Female)",
-            "Robo Knight (Male)",
-            "Robo Knight (Female)",
-            "Hero (Male)",
-            "Hero (Female)",
-            "Afro (Male)",
-            "Afro (Female)",
-            "Punk (Male)",
-            "Punk (Female)",
-            "Horror (Male)",
-            "Horror (Female)",
-            "Raiden (Male)",
-            "Raiden (Female)",
-            "Samurai",
-            "Geisha",
-            "Pompadour",
-            "Pigtails",
-            "Prince",
-            "Princess",
-            "Cowboy",
-            "Kitty",
-            "Elephant (Male)",
-            "Elephant (Female)",
-            "Ducky (Male)",
-            "Ducky (Female)",
-            "Wabbit (Male)",
-            "Wabbit (Female)"});
-            this.hairstyle_list_box.Location = new System.Drawing.Point(1319, 570);
-            this.hairstyle_list_box.Margin = new System.Windows.Forms.Padding(5);
-            this.hairstyle_list_box.Name = "hairstyle_list_box";
-            this.hairstyle_list_box.Size = new System.Drawing.Size(601, 56);
-            this.hairstyle_list_box.TabIndex = 0;
-            this.hairstyle_list_box.Text = "Select Hairstyle to Replace";
-            this.hairstyle_list_box.SelectedIndexChanged += new System.EventHandler(this.hairstyleListBox_SelectedIndexChanged);
-            // 
-            // model_file_label
-            // 
-            this.model_file_label.AutoSize = true;
-            this.model_file_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.model_file_label.Location = new System.Drawing.Point(1319, 173);
-            this.model_file_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.model_file_label.Name = "model_file_label";
-            this.model_file_label.Size = new System.Drawing.Size(601, 148);
-            this.model_file_label.TabIndex = 1;
-            this.model_file_label.Text = "modelpath";
-            // 
-            // folder_label
-            // 
-            this.folder_label.AutoSize = true;
-            this.folder_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.folder_label.Location = new System.Drawing.Point(1319, 417);
-            this.folder_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.folder_label.Name = "folder_label";
-            this.folder_label.Size = new System.Drawing.Size(601, 148);
-            this.folder_label.TabIndex = 1;
-            this.folder_label.Text = "modelfolderpath";
-            // 
-            // selectButton
-            // 
-            this.selectButton.AutoSize = true;
-            this.selectButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectButton.Location = new System.Drawing.Point(1319, 82);
-            this.selectButton.Margin = new System.Windows.Forms.Padding(5);
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(601, 86);
-            this.selectButton.TabIndex = 0;
-            this.selectButton.Text = "Select Model File";
-            this.selectButton.UseVisualStyleBackColor = true;
-            this.selectButton.Click += new System.EventHandler(this.Select_Button_Click);
-            // 
-            // modelfolderButton
-            // 
-            this.modelfolderButton.AutoSize = true;
-            this.modelfolderButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modelfolderButton.Location = new System.Drawing.Point(1319, 326);
-            this.modelfolderButton.Margin = new System.Windows.Forms.Padding(5);
-            this.modelfolderButton.Name = "modelfolderButton";
-            this.modelfolderButton.Size = new System.Drawing.Size(601, 86);
-            this.modelfolderButton.TabIndex = 0;
-            this.modelfolderButton.Text = "Select Model Files Folder";
-            this.modelfolderButton.UseVisualStyleBackColor = true;
-            this.modelfolderButton.Click += new System.EventHandler(this.Folder_Button_Click);
-            // 
-            // selectgamepacButton
-            // 
-            this.selectgamepacButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectgamepacButton.Location = new System.Drawing.Point(662, 82);
-            this.selectgamepacButton.Margin = new System.Windows.Forms.Padding(5);
-            this.selectgamepacButton.Name = "selectgamepacButton";
-            this.selectgamepacButton.Size = new System.Drawing.Size(598, 86);
-            this.selectgamepacButton.TabIndex = 5;
-            this.selectgamepacButton.Text = "Select GAME.PAC";
-            this.selectgamepacButton.UseVisualStyleBackColor = true;
-            this.selectgamepacButton.Click += new System.EventHandler(this.Select_Pac_Button_Click);
-            // 
-            // selectgamepahButton
-            // 
-            this.selectgamepahButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selectgamepahButton.Location = new System.Drawing.Point(662, 326);
-            this.selectgamepahButton.Margin = new System.Windows.Forms.Padding(5);
-            this.selectgamepahButton.Name = "selectgamepahButton";
-            this.selectgamepahButton.Size = new System.Drawing.Size(598, 86);
-            this.selectgamepahButton.TabIndex = 6;
-            this.selectgamepahButton.Text = "Select GAME.PAH";
-            this.selectgamepahButton.UseVisualStyleBackColor = true;
-            this.selectgamepahButton.Click += new System.EventHandler(this.Select_Pah_Button_Click);
-            // 
-            // unpackgamepacButton
-            // 
-            this.unpackgamepacButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.unpackgamepacButton.Location = new System.Drawing.Point(662, 570);
-            this.unpackgamepacButton.Margin = new System.Windows.Forms.Padding(5);
-            this.unpackgamepacButton.Name = "unpackgamepacButton";
-            this.unpackgamepacButton.Size = new System.Drawing.Size(598, 86);
-            this.unpackgamepacButton.TabIndex = 7;
-            this.unpackgamepacButton.Text = "Unpack GAME.PAC";
-            this.unpackgamepacButton.UseVisualStyleBackColor = true;
-            this.unpackgamepacButton.Click += new System.EventHandler(this.Unpack_Pac_Button_Click);
-            // 
-            // repackgamepacButton
-            // 
-            this.repackgamepacButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repackgamepacButton.Location = new System.Drawing.Point(662, 814);
-            this.repackgamepacButton.Margin = new System.Windows.Forms.Padding(5);
-            this.repackgamepacButton.Name = "repackgamepacButton";
-            this.repackgamepacButton.Size = new System.Drawing.Size(598, 86);
-            this.repackgamepacButton.TabIndex = 8;
-            this.repackgamepacButton.Text = "Repack GAME.PAC";
-            this.repackgamepacButton.UseVisualStyleBackColor = true;
-            this.repackgamepacButton.Click += new System.EventHandler(this.Repack_Pac_Button_Click);
-            // 
-            // select_iso_wbfs_label
-            // 
-            this.select_iso_wbfs_label.AutoSize = true;
-            this.select_iso_wbfs_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.select_iso_wbfs_label.Location = new System.Drawing.Point(5, 173);
-            this.select_iso_wbfs_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.select_iso_wbfs_label.Name = "select_iso_wbfs_label";
-            this.select_iso_wbfs_label.Size = new System.Drawing.Size(598, 148);
-            this.select_iso_wbfs_label.TabIndex = 9;
-            this.select_iso_wbfs_label.Text = "isowbfspath";
-            // 
-            // pac_label
-            // 
-            this.pac_label.AutoSize = true;
-            this.pac_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pac_label.Location = new System.Drawing.Point(662, 173);
-            this.pac_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.pac_label.Name = "pac_label";
-            this.pac_label.Size = new System.Drawing.Size(598, 148);
-            this.pac_label.TabIndex = 10;
-            this.pac_label.Text = "gamepacpath";
-            // 
-            // pah_label
-            // 
-            this.pah_label.AutoSize = true;
-            this.pah_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pah_label.Location = new System.Drawing.Point(662, 417);
-            this.pah_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.pah_label.Name = "pah_label";
-            this.pah_label.Size = new System.Drawing.Size(598, 148);
-            this.pah_label.TabIndex = 11;
-            this.pah_label.Text = "gamepahpath";
-            // 
-            // extract_game_files_label
-            // 
-            this.extract_game_files_label.AutoSize = true;
-            this.extract_game_files_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.extract_game_files_label.Location = new System.Drawing.Point(5, 417);
-            this.extract_game_files_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.extract_game_files_label.Name = "extract_game_files_label";
-            this.extract_game_files_label.Size = new System.Drawing.Size(598, 148);
-            this.extract_game_files_label.TabIndex = 12;
-            this.extract_game_files_label.Text = "folderpath";
-            // 
-            // unpack_pac_label
-            // 
-            this.unpack_pac_label.AutoSize = true;
-            this.unpack_pac_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.unpack_pac_label.Location = new System.Drawing.Point(662, 661);
-            this.unpack_pac_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.unpack_pac_label.Name = "unpack_pac_label";
-            this.unpack_pac_label.Size = new System.Drawing.Size(598, 148);
-            this.unpack_pac_label.TabIndex = 13;
-            this.unpack_pac_label.Text = "folderpath";
-            // 
-            // select_game_files_folder_label
-            // 
-            this.select_game_files_folder_label.AutoSize = true;
-            this.select_game_files_folder_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.select_game_files_folder_label.Location = new System.Drawing.Point(5, 661);
-            this.select_game_files_folder_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.select_game_files_folder_label.Name = "select_game_files_folder_label";
-            this.select_game_files_folder_label.Size = new System.Drawing.Size(598, 148);
-            this.select_game_files_folder_label.TabIndex = 14;
-            this.select_game_files_folder_label.Text = "gamefilesfolderpath";
-            // 
-            // repack_pac_label
-            // 
-            this.repack_pac_label.AutoSize = true;
-            this.repack_pac_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.repack_pac_label.Location = new System.Drawing.Point(662, 905);
-            this.repack_pac_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.repack_pac_label.Name = "repack_pac_label";
-            this.repack_pac_label.Size = new System.Drawing.Size(598, 151);
-            this.repack_pac_label.TabIndex = 15;
-            this.repack_pac_label.Text = "status";
-            // 
-            // create_wbfs_label
-            // 
-            this.create_wbfs_label.AutoSize = true;
-            this.create_wbfs_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.create_wbfs_label.Location = new System.Drawing.Point(5, 905);
-            this.create_wbfs_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.create_wbfs_label.Name = "create_wbfs_label";
-            this.create_wbfs_label.Size = new System.Drawing.Size(598, 151);
-            this.create_wbfs_label.TabIndex = 16;
-            this.create_wbfs_label.Text = "status+wbfspath";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(5, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(598, 77);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "ISO/WBFS Tools";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(662, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(598, 77);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Archive Tools";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(1319, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(601, 77);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Installation Tools";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -552,21 +108,262 @@ namespace DokaModInterface
             this.open_iso_wbfs_dialog.FilterIndex = 3;
             this.open_iso_wbfs_dialog.Title = "Select ISO/WBFS";
             // 
-            // open_pac_dialog
+            // hairstyle_list_box
             // 
-            this.open_pac_dialog.Filter = "PAC File|*.PAC|All Files|*.*";
-            this.open_pac_dialog.Title = "Select GAME.PAC";
+            this.hairstyle_list_box.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hairstyle_list_box.FormattingEnabled = true;
+            this.hairstyle_list_box.Items.AddRange(new object[] {
+            "Warrior (Male)",
+            "Warrior (Female)",
+            "Magician (Male)",
+            "Magician (Female)",
+            "Thief (Male)",
+            "Thief (Female)",
+            "Cleric (Male)",
+            "Cleric (Female)",
+            "Spellsword (Male)",
+            "Spellsword (Female)",
+            "Alchemist (Male)",
+            "Alchemist (Female)",
+            "Ninja (Male)",
+            "Ninja (Female)",
+            "Monk (Male)",
+            "Monk (Female)",
+            "Acrobat (Male)",
+            "Acrobat (Female)",
+            "Robo Knight (Male)",
+            "Robo Knight (Female)",
+            "Hero (Male)",
+            "Hero (Female)",
+            "Afro (Male)",
+            "Afro (Female)",
+            "Punk (Male)",
+            "Punk (Female)",
+            "Horror (Male)",
+            "Horror (Female)",
+            "Raiden (Male)",
+            "Raiden (Female)",
+            "Samurai",
+            "Geisha",
+            "Pompadour",
+            "Pigtails",
+            "Prince",
+            "Princess",
+            "Cowboy",
+            "Kitty",
+            "Elephant (Male)",
+            "Elephant (Female)",
+            "Ducky (Male)",
+            "Ducky (Female)",
+            "Wabbit (Male)",
+            "Wabbit (Female)"});
+            this.hairstyle_list_box.Location = new System.Drawing.Point(5, 800);
+            this.hairstyle_list_box.Margin = new System.Windows.Forms.Padding(5);
+            this.hairstyle_list_box.Name = "hairstyle_list_box";
+            this.hairstyle_list_box.Size = new System.Drawing.Size(712, 56);
+            this.hairstyle_list_box.TabIndex = 0;
+            this.hairstyle_list_box.Text = "Select Hairstyle to Replace";
+            this.hairstyle_list_box.SelectedIndexChanged += new System.EventHandler(this.Hairstyle_List_Select_Change);
             // 
-            // open_pah_dialog
+            // finish_button
             // 
-            this.open_pah_dialog.Filter = "PAH File|*.PAH|All Files|*.*";
-            this.open_pah_dialog.Title = "Select GAME.PAH";
+            this.finish_button.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.finish_button, 2);
+            this.finish_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.finish_button.Location = new System.Drawing.Point(5, 1118);
+            this.finish_button.Margin = new System.Windows.Forms.Padding(5);
+            this.finish_button.Name = "finish_button";
+            this.finish_button.Size = new System.Drawing.Size(1435, 150);
+            this.finish_button.TabIndex = 0;
+            this.finish_button.Text = "Finish";
+            this.finish_button.UseVisualStyleBackColor = true;
+            this.finish_button.Click += new System.EventHandler(this.Finish_Button_Click);
+            // 
+            // mod_folder_label
+            // 
+            this.mod_folder_label.AutoSize = true;
+            this.mod_folder_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mod_folder_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mod_folder_label.Location = new System.Drawing.Point(5, 477);
+            this.mod_folder_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.mod_folder_label.Name = "mod_folder_label";
+            this.mod_folder_label.Size = new System.Drawing.Size(712, 159);
+            this.mod_folder_label.TabIndex = 1;
+            this.mod_folder_label.Text = "mod_folder_path";
+            this.mod_folder_label.Click += new System.EventHandler(this.model_file_label_Click);
+            // 
+            // select_mod_folder_button
+            // 
+            this.select_mod_folder_button.AutoSize = true;
+            this.select_mod_folder_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.select_mod_folder_button.Location = new System.Drawing.Point(5, 323);
+            this.select_mod_folder_button.Margin = new System.Windows.Forms.Padding(5);
+            this.select_mod_folder_button.Name = "select_mod_folder_button";
+            this.select_mod_folder_button.Size = new System.Drawing.Size(712, 149);
+            this.select_mod_folder_button.TabIndex = 0;
+            this.select_mod_folder_button.Text = "Select Mod Folder";
+            this.select_mod_folder_button.UseVisualStyleBackColor = true;
+            this.select_mod_folder_button.Click += new System.EventHandler(this.Select_Mod_Folder_Button_Click);
+            // 
+            // select_iso_wbfs_label
+            // 
+            this.select_iso_wbfs_label.AutoSize = true;
+            this.select_iso_wbfs_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.select_iso_wbfs_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.select_iso_wbfs_label.Location = new System.Drawing.Point(5, 159);
+            this.select_iso_wbfs_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.select_iso_wbfs_label.Name = "select_iso_wbfs_label";
+            this.select_iso_wbfs_label.Size = new System.Drawing.Size(712, 159);
+            this.select_iso_wbfs_label.TabIndex = 9;
+            this.select_iso_wbfs_label.Text = "iso_wbfs_path";
+            this.select_iso_wbfs_label.Click += new System.EventHandler(this.select_iso_wbfs_label_Click);
+            // 
+            // select_iso_wbfs_button
+            // 
+            this.select_iso_wbfs_button.AutoSize = true;
+            this.select_iso_wbfs_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.select_iso_wbfs_button.Location = new System.Drawing.Point(5, 5);
+            this.select_iso_wbfs_button.Margin = new System.Windows.Forms.Padding(5);
+            this.select_iso_wbfs_button.Name = "select_iso_wbfs_button";
+            this.select_iso_wbfs_button.Size = new System.Drawing.Size(712, 149);
+            this.select_iso_wbfs_button.TabIndex = 4;
+            this.select_iso_wbfs_button.Text = "Select ISO/WBFS";
+            this.select_iso_wbfs_button.UseVisualStyleBackColor = true;
+            this.select_iso_wbfs_button.Click += new System.EventHandler(this.Select_ISO_WBFS_Button_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.select_iso_wbfs_label, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.select_iso_wbfs_button, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pim_red_label, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pim_blue_label, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pim_black_label, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.mod_folder_label, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.pim_white_label, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.pim_green_label, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.select_mod_folder_button, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pim_pink_label, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.pim_yellow_label, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.igb_file_label, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.hairstyle_list_box, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.apply_mod_button, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.finish_button, 0, 7);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1445, 1273);
+            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // pim_red_label
+            // 
+            this.pim_red_label.AutoSize = true;
+            this.pim_red_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_red_label.Location = new System.Drawing.Point(725, 0);
+            this.pim_red_label.Name = "pim_red_label";
+            this.pim_red_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_red_label.TabIndex = 22;
+            this.pim_red_label.Text = "pim_red";
+            // 
+            // pim_blue_label
+            // 
+            this.pim_blue_label.AutoSize = true;
+            this.pim_blue_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_blue_label.Location = new System.Drawing.Point(725, 159);
+            this.pim_blue_label.Name = "pim_blue_label";
+            this.pim_blue_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_blue_label.TabIndex = 23;
+            this.pim_blue_label.Text = "pim_blue";
+            // 
+            // pim_black_label
+            // 
+            this.pim_black_label.AutoSize = true;
+            this.pim_black_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_black_label.Location = new System.Drawing.Point(725, 954);
+            this.pim_black_label.Name = "pim_black_label";
+            this.pim_black_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_black_label.TabIndex = 28;
+            this.pim_black_label.Text = "pim_black";
+            // 
+            // pim_white_label
+            // 
+            this.pim_white_label.AutoSize = true;
+            this.pim_white_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_white_label.Location = new System.Drawing.Point(725, 795);
+            this.pim_white_label.Name = "pim_white_label";
+            this.pim_white_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_white_label.TabIndex = 26;
+            this.pim_white_label.Text = "pim_white";
+            // 
+            // pim_green_label
+            // 
+            this.pim_green_label.AutoSize = true;
+            this.pim_green_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_green_label.Location = new System.Drawing.Point(725, 318);
+            this.pim_green_label.Name = "pim_green_label";
+            this.pim_green_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_green_label.TabIndex = 24;
+            this.pim_green_label.Text = "pim_green";
+            // 
+            // pim_pink_label
+            // 
+            this.pim_pink_label.AutoSize = true;
+            this.pim_pink_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_pink_label.Location = new System.Drawing.Point(725, 636);
+            this.pim_pink_label.Name = "pim_pink_label";
+            this.pim_pink_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_pink_label.TabIndex = 27;
+            this.pim_pink_label.Text = "pim_pink";
+            // 
+            // pim_yellow_label
+            // 
+            this.pim_yellow_label.AutoSize = true;
+            this.pim_yellow_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pim_yellow_label.Location = new System.Drawing.Point(725, 477);
+            this.pim_yellow_label.Name = "pim_yellow_label";
+            this.pim_yellow_label.Size = new System.Drawing.Size(717, 159);
+            this.pim_yellow_label.TabIndex = 25;
+            this.pim_yellow_label.Text = "pim_yellow";
+            // 
+            // igb_file_label
+            // 
+            this.igb_file_label.AutoSize = true;
+            this.igb_file_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.igb_file_label.Location = new System.Drawing.Point(3, 636);
+            this.igb_file_label.Name = "igb_file_label";
+            this.igb_file_label.Size = new System.Drawing.Size(716, 159);
+            this.igb_file_label.TabIndex = 21;
+            this.igb_file_label.Text = "igb_file";
+            // 
+            // apply_mod_button
+            // 
+            this.apply_mod_button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.apply_mod_button.Location = new System.Drawing.Point(3, 957);
+            this.apply_mod_button.Name = "apply_mod_button";
+            this.apply_mod_button.Size = new System.Drawing.Size(716, 153);
+            this.apply_mod_button.TabIndex = 19;
+            this.apply_mod_button.Text = "Apply Mod";
+            this.apply_mod_button.UseVisualStyleBackColor = true;
+            this.apply_mod_button.Click += new System.EventHandler(this.Apply_Mod_Button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1925, 1056);
+            this.ClientSize = new System.Drawing.Size(1445, 1273);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -580,44 +377,27 @@ namespace DokaModInterface
 		}
 
 		#endregion
-
-		private OpenFileDialog open_model_dialog;
-		private TableLayoutPanel tableLayoutPanel1;
-		private Button selectButton;
-		private Label model_file_label;
-		private Button applyButton;
-		private Label apply_status_label;
-		private ComboBox hairstyle_list_box;
-		private Button modelfolderButton;
-		private Label folder_label;
-		private FolderBrowserDialog model_files_folder_dialog;
-		private CheckBox pim_delete_checkbox;
-		private Button selectgamefilesfolderButton;
-		private Button createwbfsButton;
-		private Button selectisowbfsButton;
-		private Button extractgamefilesButton;
 		private TableLayoutPanel tableLayoutPanel2;
 		private Button extractfilesButton;
 		private TableLayoutPanel tableLayoutPanel4;
 		private Button button2;
-		private Button selectgamepacButton;
-		private Button selectgamepahButton;
-		private Button unpackgamepacButton;
-		private Button repackgamepacButton;
-		private Label select_iso_wbfs_label;
-		private Label pac_label;
-		private Label pah_label;
-		private Label extract_game_files_label;
-		private Label unpack_pac_label;
-		private Label select_game_files_folder_label;
-		private Label repack_pac_label;
-		private Label create_wbfs_label;
-		private Label label9;
-		private Label label10;
-		private Label label11;
 		private OpenFileDialog open_iso_wbfs_dialog;
-		private OpenFileDialog open_pac_dialog;
-		private OpenFileDialog open_pah_dialog;
-		private FolderBrowserDialog game_files_folder_dialog;
+		private ComboBox hairstyle_list_box;
+		private Button finish_button;
+		private Label mod_folder_label;
+		private Button select_mod_folder_button;
+		private Label select_iso_wbfs_label;
+		private Button select_iso_wbfs_button;
+		private TableLayoutPanel tableLayoutPanel1;
+		private Button apply_mod_button;
+		private FolderBrowserDialog open_mod_folder_dialog;
+		private Label pim_red_label;
+		private Label pim_blue_label;
+		private Label pim_green_label;
+		private Label pim_black_label;
+		private Label pim_yellow_label;
+		private Label pim_white_label;
+		private Label pim_pink_label;
+		private Label igb_file_label;
 	}
 }
