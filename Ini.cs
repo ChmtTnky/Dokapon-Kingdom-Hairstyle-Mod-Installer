@@ -14,11 +14,18 @@ namespace DokaModInterface
 		{
 			get
 			{
+				if (!dict.ContainsKey(key))
+				{
+					dict[key] = new();
+				}
 				return dict[key];
 			}
 			set
 			{
-				dict[key] = value;
+				if (!dict.ContainsKey(key))
+				{
+					dict.Add(key, value);
+				}
 			}
 		}
 
@@ -30,17 +37,21 @@ namespace DokaModInterface
 			}
 			set
 			{
-				dict[key1][key2] = value;
+				if (!dict.ContainsKey(key1))
+				{
+					dict[key1] = new();
+				}
+				dict[key1].Add(key2, value);
 			}
 		}
 
-		private Ini() { dict = new(); }
+		private Ini() { this.dict = new(); }
 
 		public static Ini Load(string file)
 		{
 			if (!File.Exists(file))
 			{
-				File.Create(file);
+				File.Create(file).Close();
 			}
 			Ini ret = new();
 
