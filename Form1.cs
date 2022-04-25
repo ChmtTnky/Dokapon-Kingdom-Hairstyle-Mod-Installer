@@ -13,6 +13,9 @@ namespace DokaModInterface
 		public string igb_file_name = string.Empty;
 		public string[] pim_file_name_array = new string[7];
 
+		// Path to directory containing GAME.PAC and GAME.PAH
+		string files_path = string.Empty;
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -48,7 +51,7 @@ namespace DokaModInterface
 				Array.Fill(pim_file_name_array, "Unselected");
 
 				// Get and verify the existence of the IGB file
-				igb_file_name = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["IGB File"]["IGB"]);
+				igb_file_name = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["IGB File", "IGB"]);
 				if (!File.Exists(igb_file_name))
 				{
 					var error = MessageBox.Show("The IGB file specified by files.ini does not exist", "Error: IGB file not found", MessageBoxButtons.OK);
@@ -57,33 +60,33 @@ namespace DokaModInterface
 				igb_file_label.Text = "IGB Model: " + igb_file_name;
 
 				// Get the paths of the pim files
-				if (asset_list["PIM Files"]["Red"] != null && asset_list["PIM Files"]["Red"] != string.Empty)
-					pim_file_name_array[0] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["Red"]);
+				if (asset_list["PIM Files", "Red"] != null && asset_list["PIM Files", "Red"] != string.Empty)
+					pim_file_name_array[0] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "Red"]);
 
-				if (asset_list["PIM Files"]["Blue"] != null && asset_list["PIM Files"]["Blue"] != string.Empty)
-					pim_file_name_array[1] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["Blue"]);
+				if (asset_list["PIM Files", "Blue"] != null && asset_list["PIM Files", "Blue"] != string.Empty)
+					pim_file_name_array[1] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "Blue"]);
 
-				if (asset_list["PIM Files"]["Green"] != null && asset_list["PIM Files"]["Green"] != string.Empty)
-					pim_file_name_array[2] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["Green"]);
+				if (asset_list["PIM Files", "Green"] != null && asset_list["PIM Files", "Green"] != string.Empty)
+					pim_file_name_array[2] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "Green"]);
 
-				if (asset_list["PIM Files"]["Yellow"] != null && asset_list["PIM Files"]["Yellow"] != string.Empty)
-					pim_file_name_array[3] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["Yellow"]);
+				if (asset_list["PIM Files", "Yellow"] != null && asset_list["PIM Files", "Yellow"] != string.Empty)
+					pim_file_name_array[3] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "Yellow"]);
 
-				if (asset_list["PIM Files"]["Pink"] != null && asset_list["PIM Files"]["Pink"] != string.Empty)
-					pim_file_name_array[4] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["Pink"]);
+				if (asset_list["PIM Files", "Pink"] != null && asset_list["PIM Files", "Pink"] != string.Empty)
+					pim_file_name_array[4] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "Pink"]);
 
-				if (asset_list["PIM Files"]["White"] != null && asset_list["PIM Files"]["White"] != string.Empty)
-					pim_file_name_array[5] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["White"]);
+				if (asset_list["PIM Files", "White"] != null && asset_list["PIM Files", "White"] != string.Empty)
+					pim_file_name_array[5] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "White"]);
 
-				if (asset_list["PIM Files"]["Black"] != null && asset_list["PIM Files"]["Black"] != string.Empty)
-					pim_file_name_array[6] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files"]["Black"]);
+				if (asset_list["PIM Files", "Black"] != null && asset_list["PIM Files", "Black"] != string.Empty)
+					pim_file_name_array[6] = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["PIM Files", "Black"]);
 
 				// Verify that the pim files exists
 				for (int i = 0; i < 7; i++)
 				{
-					if (!File.Exists(pim_file_name_array[i]))
+					if (pim_file_name_array[i] != "Unselected" && !File.Exists(pim_file_name_array[i]))
 					{
-						var error = MessageBox.Show("The IGB file specified by files.ini does not exist", "Error: PIM file not found", MessageBoxButtons.OK);
+						var error = MessageBox.Show("The PIM file specified by files.ini does not exist", "Error: PIM file not found", MessageBoxButtons.OK);
 						return;
 					}
 				}
@@ -211,8 +214,23 @@ namespace DokaModInterface
 				return;
 			}
 
+			// Get path to directory containing GAME.PAC and GAME.PAH
+			if (Directory.Exists(Path.Combine("DokaponFiles", "DATA", "files")))
+			{
+				files_path = Path.Combine("DokaponFiles", "DATA", "files");
+			}
+			else if (Directory.Exists(Path.Combine("DokaponFiles", "files")))
+			{
+				files_path = Path.Combine("DokaponFiles", "files");
+			}
+			else
+			{
+				var error = MessageBox.Show("\"files\" directory not found within DokaponFiles", "Error: Expected directory not found", MessageBoxButtons.OK);
+				return;
+			}
+
 			// Unpack GAME.PAC
-			if (!PACManager.PAC.Unpack(Path.Combine("DokaponFiles", "files", "GAME.PAC"), Path.Combine("DokaponFiles", "files", "GAME.PAH")))
+			if (!PACManager.PAC.Unpack(Path.Combine(files_path, "GAME.PAC"), Path.Combine(files_path, "GAME.PAH")))
 			{
 				var error = MessageBox.Show("The Unpack function could not be completed", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
@@ -238,11 +256,15 @@ namespace DokaModInterface
 			if(iso_wbfs_file_selected) // Has the game files folder been selected?
 			{
 				// Repack GAME.PAC and GAME.PAH
-				PACManager.PAC.Pack();
+				if (!PACManager.PAC.Pack())
+				{
+					var error = MessageBox.Show("The Pack function could not be completed", "Error: Pack method failed", MessageBoxButtons.OK);
+					return;
+				}
 
 				// Move GAME.PAC and GAME.PAH to correct directory
-				File.Move("GAME.PAC", Path.Combine("DokaponFiles", "files", "GAME.PAC"), true);
-				File.Move("GAME.PAH", Path.Combine("DokaponFiles", "files", "GAME.PAH"), true);
+				File.Move("GAME.PAC", Path.Combine(files_path, "GAME.PAC"), true);
+				File.Move("GAME.PAH", Path.Combine(files_path, "GAME.PAH"), true);
 
 				// Create WBFS using wit
 				Process process = new();
@@ -267,13 +289,21 @@ namespace DokaModInterface
 				// Delete remaining files
 				Directory.Delete("DokaponFiles", true);
 				Directory.Delete("PACFiles", true);
+				File.Delete("order.txt");
 
 				// Output success message
 				if (File.Exists("ModdedDokapon.wbfs"))
 				{
 					var error = MessageBox.Show("ModdedDokapon.wbfs can be found in the same directory as the executable", "Success: WBFS file was created", MessageBoxButtons.OK);
+					iso_wbfs_file_selected = false;
+					select_iso_wbfs_label.Text = "ISO/WBFS: Unselected";
 					return;
 				}
+			}
+			else
+			{
+				var error = MessageBox.Show("Please select an ISO/WBFS first before attempting to finish the installation process", "Error: Game files have yet to be extracted", MessageBoxButtons.OK);
+				return;
 			}
 		}
 
