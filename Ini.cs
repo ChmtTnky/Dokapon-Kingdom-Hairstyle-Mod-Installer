@@ -24,7 +24,7 @@ namespace DokaModInterface
 			{
 				if (!dict.ContainsKey(key))
 				{
-					dict.Add(key, value);
+					dict[key] = new();
 				}
 			}
 		}
@@ -33,15 +33,15 @@ namespace DokaModInterface
 		{
 			get
 			{
-				return dict[key1][key2];
+				if (!this[key1].ContainsKey(key2))
+				{
+					return null;
+				}
+				return this[key1][key2];
 			}
 			set
 			{
-				if (!dict.ContainsKey(key1))
-				{
-					dict[key1] = new();
-				}
-				dict[key1].Add(key2, value);
+				this[key1][key2] = value;
 			}
 		}
 
@@ -65,7 +65,7 @@ namespace DokaModInterface
 				}
 				if (line.Contains('[') && line.Contains(']'))
 				{
-					section = line[1..^2].Trim();
+					section = line[1..^1].Trim();
 				}
 				if (section == null)
 				{
@@ -76,7 +76,7 @@ namespace DokaModInterface
 				{
 					continue;
 				}
-				ret[section][line_split[0].Trim().ToLowerInvariant()] = line_split[1].Trim();
+				ret[section][line_split[0].Trim()] = line_split[1].Trim();
 			}
 
 			return ret;
