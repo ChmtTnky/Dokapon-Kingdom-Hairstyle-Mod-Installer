@@ -33,6 +33,10 @@ namespace DokaModInterface
 		{
 			get
 			{
+				if (!dict.ContainsKey(key1))
+				{
+					dict[key1] = new();
+				}
 				return dict[key1][key2];
 			}
 			set
