@@ -8,10 +8,11 @@ namespace PACManager
 		public static bool Pack()
 		{
 			shift_jis = CodePagesEncodingProvider.Instance.GetEncoding("shift-jis");
-			Dictionary<string, ushort> file_dict = new();
-			string[] files = Directory.GetFiles("PACFiles");
-			string[] file_names = files.Select(a => Path.GetFileName(a)).ToArray();
-			for (ushort i = 0; i < file_names.Length; i++)
+
+			SortedDictionary<string, short> file_dict = new();
+			string[] file_names = File.ReadAllLines("order.txt");
+			string[] files = file_names.Select(a => Path.Combine("PACFiles", a)).ToArray();
+			for (short i = 0; i < file_names.Length; i++)
 			{
 				file_dict.Add(file_names[i], i);
 			}
@@ -83,6 +84,25 @@ namespace PACManager
 			{
 				// sort the files for each letter index
 				alphabet_list[i].Sort();
+				// apparently this 0x2D7 object is bugged and has to be in this specific position to avoid crashing
+				int index;
+				bool found = false;
+				// scan the list for 0x2D7
+				for (index = 0; index < alphabet_list[i].Count - 1; index++)
+				{
+					if (file_dict[alphabet_list[i][index]] == 0x2D7)
+					{
+						found = true;
+						break;
+					}
+				}
+				if (found)
+				{
+					// if 0x2D7 exists, move it to the correct position
+					string name = alphabet_list[i][index];
+					alphabet_list[i].RemoveAt(index);
+					alphabet_list[i].Insert(alphabet_list[i].Count - 1, name);
+				}
 				// find the offsets for each letter's position in pah
 				alphabet[i] = total_alphabet_count + (file_names.Length * 0x10) + header_size;
 				total_alphabet_count += (alphabet_list[i].Count + 1) * sizeof(ushort);
@@ -175,6 +195,7 @@ namespace PACManager
 			byte[] data;
 			int old_pos;
 			string name;
+			StreamWriter order = new(File.Create("order.txt"));
 			for (int file_id = 0; file_id < file_count; file_id++)
 			{
 				pac.BaseStream.Position = pah.ReadInt32();
@@ -183,12 +204,15 @@ namespace PACManager
 				old_pos = (int)pah.BaseStream.Position + sizeof(int);
 				pah.BaseStream.Position = pah.ReadInt32();
 				name = pah.ReadZeroTerminatedString();
+				order.WriteLine(name);
 				BinaryWriter temp = new(File.Create($"PACFiles/{name}"));
 				pah.BaseStream.Position = old_pos;
 				temp.Write(data);
 				temp.Flush();
 				temp.Close();
 			}
+			order.Flush();
+			order.Close();
 			return true;
 		}
 	}
