@@ -14,7 +14,7 @@ namespace DokaModInterface
 		public string[] pim_file_name_array = new string[7];
 
 		// Path to directory containing GAME.PAC and GAME.PAH
-		string files_path = string.Empty;
+		string files_folder_path = string.Empty;
 
 		public Form1()
 		{
@@ -217,11 +217,11 @@ namespace DokaModInterface
 			// Get path to directory containing GAME.PAC and GAME.PAH
 			if (Directory.Exists(Path.Combine("DokaponFiles", "DATA", "files")))
 			{
-				files_path = Path.Combine("DokaponFiles", "DATA", "files");
+				files_folder_path = Path.Combine("DokaponFiles", "DATA", "files");
 			}
 			else if (Directory.Exists(Path.Combine("DokaponFiles", "files")))
 			{
-				files_path = Path.Combine("DokaponFiles", "files");
+				files_folder_path = Path.Combine("DokaponFiles", "files");
 			}
 			else
 			{
@@ -230,7 +230,7 @@ namespace DokaModInterface
 			}
 
 			// Unpack GAME.PAC
-			if (!PACManager.PAC.Unpack(Path.Combine(files_path, "GAME.PAC"), Path.Combine(files_path, "GAME.PAH")))
+			if (!PACManager.PAC.Unpack(Path.Combine(files_folder_path, "GAME.PAC"), Path.Combine(files_folder_path, "GAME.PAH")))
 			{
 				var error = MessageBox.Show("The Unpack function could not be completed", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
@@ -263,8 +263,8 @@ namespace DokaModInterface
 				}
 
 				// Move GAME.PAC and GAME.PAH to correct directory
-				File.Move("GAME.PAC", Path.Combine(files_path, "GAME.PAC"), true);
-				File.Move("GAME.PAH", Path.Combine(files_path, "GAME.PAH"), true);
+				File.Move("GAME.PAC", Path.Combine(files_folder_path, "GAME.PAC"), true);
+				File.Move("GAME.PAH", Path.Combine(files_folder_path, "GAME.PAH"), true);
 
 				// Create WBFS using wit
 				Process process = new();
