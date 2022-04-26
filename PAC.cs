@@ -10,8 +10,10 @@ namespace PACManager
 			shift_jis = CodePagesEncodingProvider.Instance.GetEncoding("shift-jis");
 
 			SortedDictionary<string, short> file_dict = new();
-			string[] file_names = File.ReadAllLines("order.txt");
+			string[] order = File.ReadAllLines("order.txt");
+			string[] file_names = order.Where(a => File.Exists(Path.Combine("PACFiles", a))).ToArray();
 			string[] files = file_names.Select(a => Path.Combine("PACFiles", a)).ToArray();
+
 			for (short i = 0; i < file_names.Length; i++)
 			{
 				file_dict.Add(file_names[i], i);
