@@ -167,10 +167,6 @@ namespace PACManager
 			pah.Write(buffer, 0, 0x30);
 			pah.Flush();
 			pah.Close();
-
-
-			//File.Move("GAME.PAH", Path.Combine(output_path, "GAME.PAH"), true);
-			//File.Move("GAME.PAC", Path.Combine(output_path, "GAME.PAC"), true);
 			return true;
 		}
 
@@ -206,6 +202,8 @@ namespace PACManager
 			}
 			order.Flush();
 			order.Close();
+			pac.Close();
+			pah.Close();
 			return true;
 		}
 	}
