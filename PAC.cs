@@ -5,7 +5,7 @@ namespace PACManager
 	public static class PAC
 	{
 		public static Encoding shift_jis { get; private set; }
-		public static bool Pack()
+		public static bool Pack(string output_path)
 		{
 			shift_jis = CodePagesEncodingProvider.Instance.GetEncoding("shift-jis");
 
@@ -172,12 +172,12 @@ namespace PACManager
 			{
 				File.Delete("GAME.PAH");
 			}
-			File.Move("temp_GAME.PAH", "GAME.PAH");
+			File.Move("temp_GAME.PAH", Path.Combine(output_path, "GAME.PAH"), true);
 			if (File.Exists("GAME.PAC"))
 			{
 				File.Delete("GAME.PAC");
 			}
-			File.Move("temp_GAME.PAC", "GAME.PAC");
+			File.Move("temp_GAME.PAC", Path.Combine(output_path, "GAME.PAC"), true);
 			return true;
 		}
 

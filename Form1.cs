@@ -54,7 +54,7 @@ namespace DokaModInterface
 				igb_file_name = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["IGB File", "IGB"]);
 				if (!File.Exists(igb_file_name))
 				{
-					var error = MessageBox.Show("The IGB file specified by files.ini does not exist", "Error: IGB file not found", MessageBoxButtons.OK);
+					MessageBox.Show("The IGB file specified by files.ini does not exist", "Error: IGB file not found", MessageBoxButtons.OK);
 					return;
 				}
 				igb_file_label.Text = "IGB Model: " + igb_file_name;
@@ -86,7 +86,7 @@ namespace DokaModInterface
 				{
 					if (pim_file_name_array[i] != "Unselected" && !File.Exists(pim_file_name_array[i]))
 					{
-						var error = MessageBox.Show("The PIM file specified by files.ini does not exist", "Error: PIM file not found", MessageBoxButtons.OK);
+						MessageBox.Show("The PIM file specified by files.ini does not exist", "Error: PIM file not found", MessageBoxButtons.OK);
 						return;
 					}
 				}
@@ -128,14 +128,15 @@ namespace DokaModInterface
 		// for all that have been selected
 		private void Apply_Mod_Button_Click(object sender, EventArgs e)
 		{
-			if (hairstyle_replace_selected && mod_folder_selected) // only apply if all required options have been selected
+			if (hairstyle_replace_selected && mod_folder_selected && iso_wbfs_file_selected) // only apply if all required options have been selected
 			{
 				string model_file_header;
 				string pim_file_header;
 
+				// If hairstyle is for a job
 				if (hairstyle_list_box.SelectedIndex < 22)
 				{
-					string index_to_string = ToString();
+					string index_to_string = hairstyle_list_box.SelectedIndex.ToString();
 					if (hairstyle_list_box.SelectedIndex < 10)
 					{
 						index_to_string = "0" + index_to_string;
@@ -144,20 +145,49 @@ namespace DokaModInterface
 					model_file_header = Path.Combine("PACFiles", "C" + index_to_string + "A");
 					pim_file_header = Path.Combine("PACFiles", "C" + index_to_string + "A" + "_H");
 				}
-				else
+				else // Prank hair is currently unsupported
 				{
-					model_file_header = Path.Combine("PACFiles", "H" + ToString());
-					pim_file_header = Path.Combine("PACFiles", "H" + ToString() + "C");
+					model_file_header = Path.Combine("PACFiles", "H" + hairstyle_list_box.SelectedIndex.ToString());
+					pim_file_header = Path.Combine("PACFiles", "H" + hairstyle_list_box.SelectedIndex.ToString() + "C");
 				}
 
+				// Copy in IGB file
 				for (int i = 1; i < 5; i++)
 				{
 					File.Copy(igb_file_name, model_file_header + "_" + i.ToString() + "P.IGB", true);
 				}
 
-				for (int i = 0; i < 7; i++)
+				// Copy in PIM files
+				for (int i = 0; i < pim_file_name_array.Length; i++)
 				{
-					File.Delete(Path.Combine("PACFiles", pim_file_header + i.ToString() + ".PIM"));
+					if (pim_file_name_array[i] != "Unselected" && pim_file_name_array[i] != string.Empty)
+					{
+						File.Copy(pim_file_name_array[i], pim_file_header + i.ToString() + ".PIM", true);
+					}
+					else // If pim file was not selected for a given color, delete the existing PIM file
+					{
+						File.Delete(pim_file_header + i.ToString() + ".PIM");
+					}
+				}
+
+				MessageBox.Show("Mod files have successfully been moved into the game files. To complete the application, press Finish.", "Success: Mod successfully applied", MessageBoxButtons.OK);
+			}
+			else
+			{
+				if (!iso_wbfs_file_selected)
+				{
+					MessageBox.Show("Please select an ISO/WBFS first before attempting to apply any mods.", "Error: Game files have yet to be extracted", MessageBoxButtons.OK);
+					return;
+				}
+				if (!mod_folder_selected)
+				{
+					MessageBox.Show("Please select a mod folder before attempting to apply any mods.", "Error: Mod folder not selected", MessageBoxButtons.OK);
+					return;
+				}
+				if (!hairstyle_replace_selected)
+				{
+					MessageBox.Show("Please select a hairstyle to replace before attempting to apply any mods.", "Error: Hairstyle not selected", MessageBoxButtons.OK);
+					return;
 				}
 			}
 		}
@@ -171,7 +201,7 @@ namespace DokaModInterface
 			// Check for WIT
 			if (!Directory.Exists("WIT"))
 			{
-				var error = MessageBox.Show("WIT was not found in the same directory as the executable", "Error: WIT was not found", MessageBoxButtons.OK);
+				MessageBox.Show("WIT was not found in the same directory as the executable", "Error: WIT was not found", MessageBoxButtons.OK);
 				return;
 			}
 
@@ -210,7 +240,7 @@ namespace DokaModInterface
 
 			if (!Directory.Exists("DokaponFiles"))
 			{
-				var error = MessageBox.Show("DokaponFiles folder not found after executing WIT Extract", "Error: WIT extraction failed", MessageBoxButtons.OK);
+				MessageBox.Show("DokaponFiles folder not found after executing WIT Extract", "Error: WIT extraction failed", MessageBoxButtons.OK);
 				return;
 			}
 
@@ -225,20 +255,20 @@ namespace DokaModInterface
 			}
 			else
 			{
-				var error = MessageBox.Show("\"files\" directory not found within DokaponFiles", "Error: Expected directory not found", MessageBoxButtons.OK);
+				MessageBox.Show("\"files\" directory not found within DokaponFiles", "Error: Expected directory not found", MessageBoxButtons.OK);
 				return;
 			}
 
 			// Unpack GAME.PAC
 			if (!PACManager.PAC.Unpack(Path.Combine(files_folder_path, "GAME.PAC"), Path.Combine(files_folder_path, "GAME.PAH")))
 			{
-				var error = MessageBox.Show("The Unpack function could not be completed", "Error: Unpack method failed", MessageBoxButtons.OK);
+				MessageBox.Show("The Unpack function could not be completed", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
 			}
 
 			if (!Directory.Exists("PACFiles"))
 			{
-				var error = MessageBox.Show("The Unpack function finished by PACFiles was not produced", "Error: Unpack method failed", MessageBoxButtons.OK);
+				MessageBox.Show("The Unpack function finished but PACFiles was not produced", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
 			}
 		}
@@ -249,22 +279,24 @@ namespace DokaModInterface
 			// Check if output file already exists, as wit will not automatically override it
 			if (File.Exists("ModdedDokapon.wbfs"))
 			{
-				var error = MessageBox.Show("Delete or move ModdedDokapon.wbfs before proceeding", "Error: Output file already exists", MessageBoxButtons.OK);
+				MessageBox.Show("Delete or move ModdedDokapon.wbfs before proceeding", "Error: Output file already exists", MessageBoxButtons.OK);
 				return;
 			}
 
 			if(iso_wbfs_file_selected) // Has the game files folder been selected?
 			{
 				// Repack GAME.PAC and GAME.PAH
-				if (!PACManager.PAC.Pack())
+				if (!PACManager.PAC.Pack(files_folder_path))
 				{
-					var error = MessageBox.Show("The Pack function could not be completed", "Error: Pack method failed", MessageBoxButtons.OK);
+					MessageBox.Show("The Pack function could not be completed", "Error: Pack method failed", MessageBoxButtons.OK);
 					return;
 				}
 
 				// Move GAME.PAC and GAME.PAH to correct directory
+				/*
 				File.Move("GAME.PAC", Path.Combine(files_folder_path, "GAME.PAC"), true);
 				File.Move("GAME.PAH", Path.Combine(files_folder_path, "GAME.PAH"), true);
+				*/
 
 				// Create WBFS using wit
 				Process process = new();
@@ -282,7 +314,7 @@ namespace DokaModInterface
 
 				if (!File.Exists("ModdedDokapon.wbfs"))
 				{
-					var error = MessageBox.Show("ModdedDokapon.wbfs not found after executing WIT Copy", "Error: WIT copy failed", MessageBoxButtons.OK);
+					MessageBox.Show("ModdedDokapon.wbfs not found after executing WIT Copy", "Error: WIT copy failed", MessageBoxButtons.OK);
 					return;
 				}
 
@@ -294,7 +326,7 @@ namespace DokaModInterface
 				// Output success message
 				if (File.Exists("ModdedDokapon.wbfs"))
 				{
-					var error = MessageBox.Show("ModdedDokapon.wbfs can be found in the same directory as the executable", "Success: WBFS file was created", MessageBoxButtons.OK);
+					MessageBox.Show("ModdedDokapon.wbfs can be found in the same directory as the executable. You may now exit this program.", "Success: WBFS file was created", MessageBoxButtons.OK);
 					iso_wbfs_file_selected = false;
 					select_iso_wbfs_label.Text = "ISO/WBFS: Unselected";
 					return;
@@ -302,7 +334,7 @@ namespace DokaModInterface
 			}
 			else
 			{
-				var error = MessageBox.Show("Please select an ISO/WBFS first before attempting to finish the installation process", "Error: Game files have yet to be extracted", MessageBoxButtons.OK);
+				MessageBox.Show("Please select an ISO/WBFS first before attempting to finish the installation process", "Error: Game files have yet to be extracted", MessageBoxButtons.OK);
 				return;
 			}
 		}
