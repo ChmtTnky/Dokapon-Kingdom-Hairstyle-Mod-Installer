@@ -44,6 +44,12 @@ namespace DokaModInterface
 			mod_folder_selected = false;
 			if(open_mod_folder_dialog.ShowDialog() == DialogResult.OK)
 			{
+				if (!File.Exists(Path.Combine(open_mod_folder_dialog.SelectedPath, "files.ini")))
+				{
+					MessageBox.Show("\"files.ini\" not found in the specified directory.", "Error: Ini file not found", MessageBoxButtons.OK);
+					return;
+				}
+
 				mod_folder_label.Text = open_mod_folder_dialog.SelectedPath;
 				mod_folder_selected = true;
 
@@ -54,7 +60,7 @@ namespace DokaModInterface
 				igb_file_name = Path.Combine(open_mod_folder_dialog.SelectedPath, asset_list["IGB File", "IGB"]);
 				if (!File.Exists(igb_file_name))
 				{
-					MessageBox.Show("The IGB file specified by files.ini does not exist", "Error: IGB file not found", MessageBoxButtons.OK);
+					MessageBox.Show("The IGB file specified by files.ini does not exist.", "Error: IGB file not found", MessageBoxButtons.OK);
 					return;
 				}
 				igb_file_label.Text = "IGB Model: " + igb_file_name;
@@ -86,7 +92,7 @@ namespace DokaModInterface
 				{
 					if (pim_file_name_array[i] != "Unselected" && !File.Exists(pim_file_name_array[i]))
 					{
-						MessageBox.Show("The PIM file specified by files.ini does not exist", "Error: PIM file not found", MessageBoxButtons.OK);
+						MessageBox.Show("The PIM file specified by files.ini does not exist.", "Error: PIM file not found", MessageBoxButtons.OK);
 						return;
 					}
 				}
@@ -201,7 +207,7 @@ namespace DokaModInterface
 			// Check for WIT
 			if (!Directory.Exists("WIT"))
 			{
-				MessageBox.Show("WIT was not found in the same directory as the executable", "Error: WIT was not found", MessageBoxButtons.OK);
+				MessageBox.Show("WIT was not found in the same directory as the executable.", "Error: WIT was not found", MessageBoxButtons.OK);
 				return;
 			}
 
@@ -229,7 +235,7 @@ namespace DokaModInterface
 
 			if (!Directory.Exists("DokaponFiles"))
 			{
-				MessageBox.Show("DokaponFiles folder not found after executing WIT Extract", "Error: WIT extraction failed", MessageBoxButtons.OK);
+				MessageBox.Show("DokaponFiles folder not found after executing WIT Extract.", "Error: WIT extraction failed", MessageBoxButtons.OK);
 				return;
 			}
 
@@ -244,20 +250,20 @@ namespace DokaModInterface
 			}
 			else
 			{
-				MessageBox.Show("\"files\" directory not found within DokaponFiles", "Error: Expected directory not found", MessageBoxButtons.OK);
+				MessageBox.Show("\"files\" directory not found within DokaponFiles.", "Error: Expected directory not found", MessageBoxButtons.OK);
 				return;
 			}
 
 			// Unpack GAME.PAC
 			if (!PACManager.PAC.Unpack(Path.Combine(files_folder_path, "GAME.PAC"), Path.Combine(files_folder_path, "GAME.PAH")))
 			{
-				MessageBox.Show("The Unpack function could not be completed", "Error: Unpack method failed", MessageBoxButtons.OK);
+				MessageBox.Show("The Unpack function could not be completed.", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
 			}
 
 			if (!Directory.Exists("PACFiles"))
 			{
-				MessageBox.Show("The Unpack function finished but PACFiles was not produced", "Error: Unpack method failed", MessageBoxButtons.OK);
+				MessageBox.Show("The Unpack function finished but PACFiles was not produced.", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
 			}
 		}
@@ -268,7 +274,7 @@ namespace DokaModInterface
 			// Check if output file already exists, as wit will not automatically override it
 			if (File.Exists("ModdedDokapon.wbfs"))
 			{
-				MessageBox.Show("Delete or move ModdedDokapon.wbfs before proceeding", "Error: Output file already exists", MessageBoxButtons.OK);
+				MessageBox.Show("Delete or move ModdedDokapon.wbfs before proceeding.", "Error: Output file already exists", MessageBoxButtons.OK);
 				return;
 			}
 
@@ -277,7 +283,7 @@ namespace DokaModInterface
 				// Repack GAME.PAC and GAME.PAH
 				if (!PACManager.PAC.Pack(files_folder_path))
 				{
-					MessageBox.Show("The Pack function could not be completed", "Error: Pack method failed", MessageBoxButtons.OK);
+					MessageBox.Show("The Pack function could not be completed.", "Error: Pack method failed", MessageBoxButtons.OK);
 					return;
 				}
 
@@ -292,7 +298,7 @@ namespace DokaModInterface
 
 				if (!File.Exists("ModdedDokapon.wbfs"))
 				{
-					MessageBox.Show("ModdedDokapon.wbfs not found after executing WIT Copy", "Error: WIT copy failed", MessageBoxButtons.OK);
+					MessageBox.Show("ModdedDokapon.wbfs not found after executing WIT Copy.", "Error: WIT copy failed", MessageBoxButtons.OK);
 					return;
 				}
 
@@ -312,7 +318,7 @@ namespace DokaModInterface
 			}
 			else
 			{
-				MessageBox.Show("Please select an ISO/WBFS first before attempting to finish the installation process", "Error: Game files have yet to be extracted", MessageBoxButtons.OK);
+				MessageBox.Show("Please select an ISO/WBFS first before attempting to finish the installation process.", "Error: Game files have yet to be extracted", MessageBoxButtons.OK);
 				return;
 			}
 		}
