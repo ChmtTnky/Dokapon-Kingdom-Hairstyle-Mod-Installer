@@ -237,6 +237,8 @@ namespace DokaModInterface
 			{
 				// wait, otherwise it will try to unpack the files before wit is finished
 			}
+			process.Close();
+			process = null;
 
 			if (!Directory.Exists("DokaponFiles"))
 			{
@@ -311,6 +313,8 @@ namespace DokaModInterface
 				{
 					// wait, otherwise it will try to delete the files before wit is finished
 				}
+				process.Close();
+				process = null;
 
 				if (!File.Exists("ModdedDokapon.wbfs"))
 				{
