@@ -17,7 +17,7 @@ namespace PACManager
 				file_dict.Add(file_names[i], i);
 			}
 
-			BinaryWriter pac = new(File.Create("temp_GAME.PAC"));
+			BinaryWriter pac = new(File.Create("GAME.PAC"));
 			int[] file_data_lengths = new int[files.Length];
 			int[] file_data_ptrs = new int[files.Length];
 			byte[] buffer = new byte[0x800];
@@ -42,7 +42,7 @@ namespace PACManager
 
 
 
-			BinaryWriter pah = new(File.Create("temp_GAME.PAH"));
+			BinaryWriter pah = new(File.Create("GAME.PAH"));
 			pah.Write(files.Length);
 			// write the pointer to the start of data
 			const int header_size = 0x70;
@@ -168,16 +168,9 @@ namespace PACManager
 			pah.Flush();
 			pah.Close();
 
-			if (File.Exists("GAME.PAH"))
-			{
-				File.Delete("GAME.PAH");
-			}
-			File.Move("temp_GAME.PAH", Path.Combine(output_path, "GAME.PAH"), true);
-			if (File.Exists("GAME.PAC"))
-			{
-				File.Delete("GAME.PAC");
-			}
-			File.Move("temp_GAME.PAC", Path.Combine(output_path, "GAME.PAC"), true);
+
+			File.Move("GAME.PAH", Path.Combine(output_path, "GAME.PAH"), true);
+			File.Move("GAME.PAC", Path.Combine(output_path, "GAME.PAC"), true);
 			return true;
 		}
 
