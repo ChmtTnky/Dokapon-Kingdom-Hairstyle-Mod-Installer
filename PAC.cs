@@ -10,8 +10,10 @@ namespace PACManager
 			shift_jis = CodePagesEncodingProvider.Instance.GetEncoding("shift-jis");
 
 			SortedDictionary<string, short> file_dict = new();
-			string[] file_names = File.ReadAllLines("order.txt");
+			string[] order = File.ReadAllLines("order.txt");
+			string[] file_names = order.Where(a => File.Exists(Path.Combine("PACFiles", a))).ToArray();
 			string[] files = file_names.Select(a => Path.Combine("PACFiles", a)).ToArray();
+
 			for (short i = 0; i < file_names.Length; i++)
 			{
 				file_dict.Add(file_names[i], i);
@@ -167,10 +169,6 @@ namespace PACManager
 			pah.Write(buffer, 0, 0x30);
 			pah.Flush();
 			pah.Close();
-
-
-			//File.Move("GAME.PAH", Path.Combine(output_path, "GAME.PAH"), true);
-			//File.Move("GAME.PAC", Path.Combine(output_path, "GAME.PAC"), true);
 			return true;
 		}
 
@@ -206,6 +204,8 @@ namespace PACManager
 			}
 			order.Flush();
 			order.Close();
+			pac.Close();
+			pah.Close();
 			return true;
 		}
 	}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DokaModInterface
 {
-	internal class Ini
+	public class Ini
 	{
 		private readonly Dictionary<string, Dictionary<string, string>> dict;
 

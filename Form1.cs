@@ -218,27 +218,14 @@ namespace DokaModInterface
 				return;
 			}
 
-			// Delete any existing extracted files
-			if (Directory.Exists("DokaponFiles"))
-				Directory.Delete("DokaponFiles", true);
-			if (Directory.Exists("PACFiles"))
-				Directory.Delete("PACFiles", true);
-
 			// extract files using wit
-			Process process = new();
-			ProcessStartInfo startInfo = new();
-			startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-			startInfo.FileName = Path.Combine("WIT", "wit.exe");
-			startInfo.Arguments = "extract " + "\"" + open_iso_wbfs_dialog.FileName + "\"" + " " + "\"DokaponFiles\"";
-			process.StartInfo = startInfo;
-			process.Start();
-
-			while(!process.HasExited)
+			Process? process = Process.Start(new ProcessStartInfo()
 			{
-				// wait, otherwise it will try to unpack the files before wit is finished
-			}
-			process.Close();
-			process = null;
+				FileName = Path.Combine("WIT", "wit.exe"),
+				Arguments = $"extract -o \"{open_iso_wbfs_dialog.FileName}\" \"DokaponFiles\""
+			});
+			process?.WaitForExit();
+			process?.Close();
 
 			if (!Directory.Exists("DokaponFiles"))
 			{
@@ -294,27 +281,14 @@ namespace DokaModInterface
 					return;
 				}
 
-				// Move GAME.PAC and GAME.PAH to correct directory
-				/*
-				File.Move("GAME.PAC", Path.Combine(files_folder_path, "GAME.PAC"), true);
-				File.Move("GAME.PAH", Path.Combine(files_folder_path, "GAME.PAH"), true);
-				*/
-
-				// Create WBFS using wit
-				Process process = new();
-				ProcessStartInfo startInfo = new();
-				startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-				startInfo.FileName = Path.Combine("WIT", "wit.exe");
-				startInfo.Arguments = "copy " + "\"DokaponFiles\"" + " " + "\"ModdedDokapon.wbfs\"";
-				process.StartInfo = startInfo;
-				process.Start();
-
-				while (!process.HasExited)
+				// extract files using wit
+				Process? process = Process.Start(new ProcessStartInfo()
 				{
-					// wait, otherwise it will try to delete the files before wit is finished
-				}
-				process.Close();
-				process = null;
+					FileName = Path.Combine("WIT", "wit.exe"),
+					Arguments = $"copy \"DokaponFiles\" \"ModdedDokapon.wbfs\""
+				});
+				process?.WaitForExit();
+				process?.Close();
 
 				if (!File.Exists("ModdedDokapon.wbfs"))
 				{
