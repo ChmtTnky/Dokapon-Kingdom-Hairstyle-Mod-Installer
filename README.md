@@ -35,7 +35,7 @@ you can click on each of the file labels to open a manual file selection window.
 
 Click the "v" on the left of the "Select Hairstyle to Replace" dropdown list and pick the hairstyle you wish to replace.
 
-***Replacing prank hairstyles and genuine hairstyle additions are currently unsupported
+*Replacing prank hairstyles and genuine hairstyle additions are currently unsupported*
 
 **Step 4: Apply the Mod**
 
