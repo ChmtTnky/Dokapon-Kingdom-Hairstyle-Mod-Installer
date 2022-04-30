@@ -30,14 +30,14 @@ Click the "v" on the left of the "Select Hairstyle to Replace" dropdown list and
 Click the "Apply Mod" button to install the selected mod.
 If successful, a message box will appear to inform you of the successful installation.
 
-## ***REPEAT STEPS 2 - 4 FOR EVERY HAIRSTYLE MOD THAT YOU WISH TO INSTALL
+***REPEAT STEPS 2 - 4 FOR EVERY HAIRSTYLE MOD THAT YOU WISH TO INSTALL
 
 ## Step 5: Finish the Installation
 Click the "Finish" button to finish the installation process.
 Another window will appear as the program finishes the installation.
 After this windows disappears, a message box will appear to inform you that the installation was successful.
 
-***NOTES***
+***NOTES
 Prank hairstyle replacement and genuine hairstyle additions are currently in the works, but it may be some time until they are ready.
 If the game throws an error in Dolphin or crashes on console while loading a save file or new game, try again with the following Action Replay code:
 04212410 48000024
