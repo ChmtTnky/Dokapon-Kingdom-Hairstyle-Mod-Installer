@@ -8,7 +8,7 @@ Big thanks to Yackerw for creating the Archive tools, and bigger thanks to GLugi
 
 ## Instructions
 
-**Step 1: Select an ISO or WBFS
+**Step 1: Select an ISO or WBFS**
 
 Click the "Select ISO/WBFS" button and it will open a file selection window.
 Select the ISO or WBFS copy of Dokapon Kingdom that you wish to modify.
