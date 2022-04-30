@@ -2,82 +2,43 @@
 
 A program with all of the necessary tools and functions required to install hairstyle mods for Dokapon Kingdom.
 
-Big thanks to Yackerw for creating the Archive tools.
+Big thanks to Yackerw for creating the Archive tools, and bigger thanks to GLugia for updating them.
 
-## Prerequisites
-
-- Dolphin Emulator (https://dolphin-emu.org/)
-
-- WIT: Wiimms Tools (https://wit.wiimm.de/)
-
-- Microsoft .NET SDK 6.0 (https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-
-- Optional: Some hairstyle mods! (https://gamebanana.com/games/15747)
+## Where to find hairstyle mods: (https://gamebanana.com/games/15747)
 
 ## Instructions
 
-**Extract the Game Files**
+## Step 1: Select an ISO or WBFS
+Click the "Select ISO/WBFS" button and it will open a file selection window.
+Select the ISO or WBFS copy of Dokapon Kingdom that you wish to modify.
+A window will appear as the program is preparing the game files for the installation.
+If the program is unresponsive after that window disappears, please wait, as the game files are still being prepared.
 
-- Click "Select ISO/WBFS" and select the iso or wbfs file of Dokapon Kingdom that you wish to modify
+## Step 2: Select a Mod
+Click the "Select Mod Folder" button and it will open a folder selection window.
+Select the folder containing the mod you wish to install.
+Make sure the folder you select immediately contains the mod files, and in particular, the files.ini file.
+If the folder was setup properly, the texture and IGB file labels with be filled with the names of the mods file.
+If you wish to manually select the files or your desired mod isn't configured to work with the installer,
+you can click on each of the file labels to open a manual file selection window.
 
-- Click "Extract Game Files", at which point a Command Prompt will open and automatically run the command to extract the files
+## Step 3: Select an Existing Hairstyle to Replace
+Click the "v" on the left of the "Select Hairstyle to Replace" dropdown list and pick the hairstyle you wish to replace.
+***Replacing prank hairstyles and genuine hairstyle additions are currently unsupported
 
-- The extracted files will be placed in a new folder called DokaponFiles in the same directory as the executable
+## Step 4: Apply the Mod
+Click the "Apply Mod" button to install the selected mod.
+If successful, a message box will appear to inform you of the successful installation.
 
-**Unpack the GAME.PAC**
+## ***REPEAT STEPS 2 - 4 FOR EVERY HAIRSTYLE MOD THAT YOU WISH TO INSTALL
 
-- Click "Select GAME.PAC" and select the GAME.PAC located inside the newly created DokaponFiles folder
+## Step 5: Finish the Installation
+Click the "Finish" button to finish the installation process.
+Another window will appear as the program finishes the installation.
+After this windows disappears, a message box will appear to inform you that the installation was successful.
 
-- Click "Select GAME.PAH" and select the GAME.PAH located inside the newly created DokaponFiles folder
-
-- Click "Unpack GAME.PAC", at which point the program will extract the files contained within the GAME.PAC
-
-- The extracted files will be placed in a new folder called PACFiles in the same directory as the executable
-
-**Install the Mods**
-
-- Click "Select Model File" and select the IGB file of the hairstyle you wish to install
-
-- Click "Select Model Files Folder" and select the newly created PACFiles folder
-
-- Select the hairstyle from the dropdown list that you wish to replace
-
-- DO NOT UNCHECK "Delete PIM Files?". Just ignore the option unless you have a reason not to.
-
-- Click "Apply Mod" to install the hairstyle
-
-- Repeat this step for every hairstyle you wish to install
-
-**Repack the GAME.PAC**
-
-- Select "Repack GAME.PAC", at which point the program will begin repacking the GAME.PAC and GAME.PAH using the contents of PACFiles
-
-- The newly created GAME.PAC and GAME.PAH will automatically replace the previously selected GAME.PAC and GAME.PAH
-
-**Remake the WBFS**
-
-- Click "Select Game Files Folder" and select the DokaponFiles folder
-
-- Click "Create WBFS", at which point a Command Prompt will open and automatically run the command to remake the WBFS
-
-- The newly created WBFS called DokaponKingdom.wbfs will be placed in the same directory as the executable
-
-**Add the required AR Code**
-
-- In Dolphin, right click Dokapon Kingdom, select Properties, then select Add New Code
-
-- Add the folowing AR code to fix how the game loads files: 04212410 48000024
-
-- Make sure cheats are enabled in your Dolphin Configuration settings
-
-**You can now open the modded DokaponKingdom.wbfs with Dolphin**
-
-## Notes
-
-- Usage of the hairstyle unlock AR code is highly recommended
-
-- The "Delete PIM Files?" option is there for the sake of completeness. Do not uncheck it.
-
-- The program might take more time to finish if you have a slower computer. Just be patient.
-
-- There is no option to create an ISO file because it is larger than a WBFS and it serves the same function.
+***NOTES***
+Prank hairstyle replacement and genuine hairstyle additions are currently in the works, but it may be some time until they are ready.
+If the game throws an error in Dolphin or crashes on console while loading a save file or new game, try again with the following Action Replay code:
+04212410 48000024
+If you experience any bugs, please report them on the Github page or to JaJo#9557 in the Dokapon community discord (https://discord.gg/9P4DqYxVm6).
