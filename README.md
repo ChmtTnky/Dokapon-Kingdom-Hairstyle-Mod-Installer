@@ -1,8 +1,8 @@
-## Hairstyle Mod Installer Version 3.0
+## Hairstyle Mod Installer Version 4.0
 
-A program with all of the necessary tools and functions required to install hairstyle mods for Dokapon Kingdom.
+A program that performs all of the necessary functions required to install hairstyle mods for Dokapon Kingdom.
 
-Big thanks to Yackerw for creating the Archive tools, and bigger thanks to GLugia for updating them.
+Big thanks to Yackerw for creating the Archive tools, and bigger thanks to GLugia for updating them and adding the ini loader.
 
 ## Where to find hairstyle mods: (https://gamebanana.com/games/15747)
 
