@@ -8,6 +8,7 @@ namespace DokaModInterface
 		public bool mod_folder_selected = false;
 		public bool hairstyle_replace_selected = false;
 		public bool iso_wbfs_file_selected = false;
+		public bool igb_manual_select = false;
 
 		// PIM and IGB file paths
 		public string igb_file_name = string.Empty;
@@ -109,6 +110,16 @@ namespace DokaModInterface
 			else
 			{
 				mod_folder_label.Text = "Mod Folder: Unselected";
+				igb_file_label.Text = "IGB Model: Unselected";
+				pim_red_label.Text = "Red Texture: Unselected";
+				pim_blue_label.Text = "Blue Texture: Unselected";
+				pim_green_label.Text = "Green Texture: Unselected";
+				pim_yellow_label.Text = "Yellow Texture: Unselected";
+				pim_pink_label.Text = "Pink Texture: Unselected";
+				pim_white_label.Text = "White Texture: Unselected";
+				pim_black_label.Text = "Black Texture: Unselected";
+				igb_file_name = string.Empty;
+				Array.Fill(pim_file_name_array, "Unselected");
 				return;
 			}
 		}
@@ -134,7 +145,7 @@ namespace DokaModInterface
 		// for all that have been selected
 		private void Apply_Mod_Button_Click(object sender, EventArgs e)
 		{
-			if (hairstyle_replace_selected && mod_folder_selected && iso_wbfs_file_selected) // only apply if all required options have been selected
+			if (hairstyle_replace_selected && (mod_folder_selected || igb_manual_select) && iso_wbfs_file_selected) // only apply if all required options have been selected
 			{
 				string model_file_header;
 				string pim_file_header;
@@ -166,7 +177,7 @@ namespace DokaModInterface
 				// Copy in PIM files
 				for (int i = 0; i < pim_file_name_array.Length; i++)
 				{
-					if (pim_file_name_array[i] != "Unselected" && pim_file_name_array[i] != string.Empty)
+					if (pim_file_name_array[i] != "Unselected" && pim_file_name_array[i] != null && pim_file_name_array[i] != string.Empty)
 					{
 						File.Copy(pim_file_name_array[i], pim_file_header + i.ToString() + ".PIM", true);
 					}
@@ -323,21 +334,135 @@ namespace DokaModInterface
 			}
 		}
 
-
-		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		private void igb_file_label_Click(object sender, EventArgs e)
 		{
-
+			igb_manual_select = false;
+			if (open_igb_model_dialog.ShowDialog() == DialogResult.OK)
+			{
+				igb_file_label.Text = "IGB Model: " + open_igb_model_dialog.FileName;
+				igb_file_name = open_igb_model_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				igb_file_label.Text = igb_file_label.Text = "IGB Model: Unselected";
+				igb_file_name = string.Empty;
+				mod_folder_selected = false;
+				igb_manual_select = false;
+				return;
+			}
 		}
 
-		private void select_iso_wbfs_label_Click(object sender, EventArgs e)
+		private void pim_red_label_Click(object sender, EventArgs e)
 		{
-
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_red_label.Text = "Red Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[0] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_red_label.Text = "Red Texture: Unselected";
+				pim_file_name_array[0] = null;
+				return;
+			}
 		}
 
-		private void model_file_label_Click(object sender, EventArgs e)
+		private void pim_blue_label_Click(object sender, EventArgs e)
 		{
-
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_blue_label.Text = "Blue Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[1] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_blue_label.Text = "Blue Texture: Unselected";
+				pim_file_name_array[1] = null;
+				return;
+			}
 		}
 
+		private void pim_green_label_Click(object sender, EventArgs e)
+		{
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_green_label.Text = "Green Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[2] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_green_label.Text = "Green Texture: Unselected";
+				pim_file_name_array[2] = null;
+				return;
+			}
+		}
+
+		private void pim_yellow_label_Click(object sender, EventArgs e)
+		{
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_yellow_label.Text = "Yellow Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[3] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_yellow_label.Text = "Yellow Texture: Unselected";
+				pim_file_name_array[3] = null;
+				return;
+			}
+		}
+
+		private void pim_pink_label_Click(object sender, EventArgs e)
+		{
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_pink_label.Text = "Pink Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[4] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_pink_label.Text = "Pink Texture: Unselected";
+				pim_file_name_array[4] = null;
+				return;
+			}
+		}
+
+		private void pim_white_label_Click(object sender, EventArgs e)
+		{
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_white_label.Text = "White Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[5] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_white_label.Text = "White Texture: Unselected";
+				pim_file_name_array[5] = null;
+				return;
+			}
+		}
+
+		private void pim_black_label_Click(object sender, EventArgs e)
+		{
+			if (open_pim_file_dialog.ShowDialog() == DialogResult.OK)
+			{
+				pim_black_label.Text = "Black Texture: " + open_pim_file_dialog.FileName;
+				pim_file_name_array[6] = open_pim_file_dialog.FileName;
+				igb_manual_select = true;
+			}
+			else
+			{
+				pim_black_label.Text = "Black Texture: Unselected";
+				pim_file_name_array[6] = null;
+				return;
+			}
+		}
 	}
 }

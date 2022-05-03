@@ -53,6 +53,8 @@ namespace DokaModInterface
             this.igb_file_label = new System.Windows.Forms.Label();
             this.apply_mod_button = new System.Windows.Forms.Button();
             this.open_mod_folder_dialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.open_igb_model_dialog = new System.Windows.Forms.OpenFileDialog();
+            this.open_pim_file_dialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,7 +192,6 @@ namespace DokaModInterface
             this.mod_folder_label.Size = new System.Drawing.Size(712, 159);
             this.mod_folder_label.TabIndex = 1;
             this.mod_folder_label.Text = "mod_folder_path";
-            this.mod_folder_label.Click += new System.EventHandler(this.model_file_label_Click);
             // 
             // select_mod_folder_button
             // 
@@ -216,7 +217,6 @@ namespace DokaModInterface
             this.select_iso_wbfs_label.Size = new System.Drawing.Size(712, 159);
             this.select_iso_wbfs_label.TabIndex = 9;
             this.select_iso_wbfs_label.Text = "iso_wbfs_path";
-            this.select_iso_wbfs_label.Click += new System.EventHandler(this.select_iso_wbfs_label_Click);
             // 
             // select_iso_wbfs_button
             // 
@@ -266,7 +266,6 @@ namespace DokaModInterface
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1445, 1273);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pim_red_label
             // 
@@ -277,6 +276,7 @@ namespace DokaModInterface
             this.pim_red_label.Size = new System.Drawing.Size(717, 159);
             this.pim_red_label.TabIndex = 22;
             this.pim_red_label.Text = "pim_red";
+            this.pim_red_label.Click += new System.EventHandler(this.pim_red_label_Click);
             // 
             // pim_blue_label
             // 
@@ -287,6 +287,7 @@ namespace DokaModInterface
             this.pim_blue_label.Size = new System.Drawing.Size(717, 159);
             this.pim_blue_label.TabIndex = 23;
             this.pim_blue_label.Text = "pim_blue";
+            this.pim_blue_label.Click += new System.EventHandler(this.pim_blue_label_Click);
             // 
             // pim_black_label
             // 
@@ -297,6 +298,7 @@ namespace DokaModInterface
             this.pim_black_label.Size = new System.Drawing.Size(717, 159);
             this.pim_black_label.TabIndex = 28;
             this.pim_black_label.Text = "pim_black";
+            this.pim_black_label.Click += new System.EventHandler(this.pim_black_label_Click);
             // 
             // pim_white_label
             // 
@@ -307,6 +309,7 @@ namespace DokaModInterface
             this.pim_white_label.Size = new System.Drawing.Size(717, 159);
             this.pim_white_label.TabIndex = 26;
             this.pim_white_label.Text = "pim_white";
+            this.pim_white_label.Click += new System.EventHandler(this.pim_white_label_Click);
             // 
             // pim_green_label
             // 
@@ -317,6 +320,7 @@ namespace DokaModInterface
             this.pim_green_label.Size = new System.Drawing.Size(717, 159);
             this.pim_green_label.TabIndex = 24;
             this.pim_green_label.Text = "pim_green";
+            this.pim_green_label.Click += new System.EventHandler(this.pim_green_label_Click);
             // 
             // pim_pink_label
             // 
@@ -327,6 +331,7 @@ namespace DokaModInterface
             this.pim_pink_label.Size = new System.Drawing.Size(717, 159);
             this.pim_pink_label.TabIndex = 27;
             this.pim_pink_label.Text = "pim_pink";
+            this.pim_pink_label.Click += new System.EventHandler(this.pim_pink_label_Click);
             // 
             // pim_yellow_label
             // 
@@ -337,6 +342,7 @@ namespace DokaModInterface
             this.pim_yellow_label.Size = new System.Drawing.Size(717, 159);
             this.pim_yellow_label.TabIndex = 25;
             this.pim_yellow_label.Text = "pim_yellow";
+            this.pim_yellow_label.Click += new System.EventHandler(this.pim_yellow_label_Click);
             // 
             // igb_file_label
             // 
@@ -347,6 +353,7 @@ namespace DokaModInterface
             this.igb_file_label.Size = new System.Drawing.Size(716, 159);
             this.igb_file_label.TabIndex = 21;
             this.igb_file_label.Text = "igb_file";
+            this.igb_file_label.Click += new System.EventHandler(this.igb_file_label_Click);
             // 
             // apply_mod_button
             // 
@@ -358,6 +365,14 @@ namespace DokaModInterface
             this.apply_mod_button.Text = "Apply Mod";
             this.apply_mod_button.UseVisualStyleBackColor = true;
             this.apply_mod_button.Click += new System.EventHandler(this.Apply_Mod_Button_Click);
+            // 
+            // open_igb_model_dialog
+            // 
+            this.open_igb_model_dialog.Filter = "IGB files|*.igb|All Files|*.*";
+            // 
+            // open_pim_file_dialog
+            // 
+            this.open_pim_file_dialog.Filter = "PIM files|*.pim|All Files|*.*";
             // 
             // Form1
             // 
@@ -399,5 +414,7 @@ namespace DokaModInterface
 		private Label pim_white_label;
 		private Label pim_pink_label;
 		private Label igb_file_label;
+		private OpenFileDialog open_igb_model_dialog;
+		private OpenFileDialog open_pim_file_dialog;
 	}
 }
