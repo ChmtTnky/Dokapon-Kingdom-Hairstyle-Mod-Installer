@@ -289,8 +289,13 @@ namespace DokaModInterface
 				// extract files using wit
 				Process? process = Process.Start(new ProcessStartInfo()
 				{
+#if WINDOWS
+					FileName = Path.Combine("C:", "Windows", "System32", "cmd.exe"),
+					Arguments = $"/c {Path.Combine("WIT", "wit.exe")} copy \"DokaponFiles\" \"ModdedDokapon.wbfs\""
+#else
 					FileName = Path.Combine("WIT", "wit.exe"),
 					Arguments = $"copy \"DokaponFiles\" \"ModdedDokapon.wbfs\""
+#endif
 				});
 				process?.WaitForExit();
 				process?.Close();
