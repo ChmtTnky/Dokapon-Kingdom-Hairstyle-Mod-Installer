@@ -36,6 +36,8 @@ namespace DokaModInterface
 			pim_pink_label.Text = "Pink Texture: Unselected";
 			pim_white_label.Text = "White Texture: Unselected";
 			pim_black_label.Text = "Black Texture: Unselected";
+			open_iso_wbfs_dialog.Filter = "All files (*.*)|*.*|WBFS (*.wbfs)|*.wbfs|ISO (*.iso)|*.iso";
+			open_iso_wbfs_dialog.FileOk += this.Open_iso_wbfs_dialog_FileOk;
 		}
 
 		// Select model button
@@ -224,6 +226,7 @@ namespace DokaModInterface
 
 			// Get iso/wbfs file
 			iso_wbfs_file_selected = false;
+			open_iso_wbfs_dialog.FilterIndex = 0;
 			if (open_iso_wbfs_dialog.ShowDialog() == DialogResult.OK)
 			{
 				select_iso_wbfs_label.Text = open_iso_wbfs_dialog.FileName;
@@ -281,6 +284,27 @@ namespace DokaModInterface
 			{
 				MessageBox.Show("The Unpack function finished but PACFiles was not produced.", "Error: Unpack method failed", MessageBoxButtons.OK);
 				return;
+			}
+		}
+
+		private void Open_iso_wbfs_dialog_FileOk(object? sender, System.ComponentModel.CancelEventArgs e)
+		{
+			OpenFileDialog? dialog = (OpenFileDialog?)sender;
+			if (dialog == null)
+			{
+				e.Cancel = true;
+				MessageBox.Show("An error has occurred. Please notify @jjo71 on Discord.", "FileOk Dialog Error");
+				return;
+			}
+			switch (Path.GetExtension(dialog.FileName))
+			{
+				case "iso":
+				case "wbfs":
+					break;
+				default:
+					e.Cancel = true;
+					MessageBox.Show("Please select an ISO or WBFS file.", "Invalid file type selected");
+					return;
 			}
 		}
 
